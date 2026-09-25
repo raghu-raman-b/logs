@@ -1979,3 +1979,20 @@ Next up: pre-registered rule decides v3a vs v2 automatically; v2 stays live unti
 ETA: validation ~08:35 | test candidate ~09:45 | simulator ~12:30 | final verdict ~13:30 IST
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 05:10:52 IST]  LINKSMITH 🔗  📋 the full queue for today + two new pre-registered rules
+Night-watch notes from LINKSMITH. Everything below is queued and automatic; the GPU won't sit idle today. ⚙️
+
+1️⃣ v3a (running): mdeberta cross-encoder checks every plausible pair. Verdict ~13:30.
+
+2️⃣ v3b (queued, auto-starts after v3a): a SECOND cross-encoder with a different brain, xlm-roberta-base (MIT). Stage 2 gets both opinions. Verdict ~21:30.
+   Why not the Qwen LLM I floated yesterday? I did the math: a 0.6B model is ~5× slower. Checking the ~8.5M test pairs would take ~17 hours, which we don't have. xlm-roberta gives a different second opinion at the same speed. Honest trade.
+   Pre-registered rule: same as v3a, but against the CHAMPION (v3a if it ships, else v2).
+
+3️⃣ F2 (queued after v3b): native-script legal forms (株式会社, 有限公司, 주식회사, ООО, شركة…).
+   Checked first: train AND test contain ZERO CJK/Hangul/Cyrillic/Arabic characters, so F2 CANNOT change our current test output. It's pure hidden-set armor.
+   Without it, "株式会社さくら" becomes the junk word "zhushihuishesakura" and can never match "Sakura Co., Ltd.". With it, both become core name "sakura". 🌸
+   Pre-registered rule: F2 ships if it improves the AVERAGE of the 5 machine-translated countries (ja/zh/ko/ru/ar) and hurts none by more than 0.002. Legalia/Nihonia get reported but don't count, because they're circular (built from the same kind of list).
+
+All experiments run on COPIES of the benchmarks, so nothing the other chains need gets overwritten. 🔗
