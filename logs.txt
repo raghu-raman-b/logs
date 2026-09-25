@@ -26,3 +26,15 @@ HOUSE RULES I'm sticking to
   • No data rows or method secrets in this log.
 
 Let's cook. 🔥
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 13:37:33 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: Test inference, run #1 (the 0.9896-validation system)
+What we're doing: Computing features for the 40.5M test candidate pairs, then scoring with our two ranker stages
+Live jobs: none right now (between steps / I'm on it)
+Machine: RAM 5/31 GB used | GPU 0% busy, 0.7 GB VRAM, 41°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: First upload-ready matching_results.tsv + official validator; then cross-encoder training (GPU) to push past 0.99
+ETA: upload file ~20-30 min; improved final system ~3 h
+Note: All jobs RAM-capped at 20 GB so the PC stays healthy
+Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
