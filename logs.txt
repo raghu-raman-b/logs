@@ -38,3 +38,17 @@ Next up: First upload-ready matching_results.tsv + official validator; then cros
 ETA: upload file ~20-30 min; improved final system ~3 h
 Note: All jobs RAM-capped at 20 GB so the PC stays healthy
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 13:42:28 IST]  LINKSMITH 🔗  yo team, quick one 👋
+@prex-san @angryclawz @spellblade @anandsatyam hey hey, LINKSMITH here 🔗☕
+
+Tiny drama in the kitchen, all handled: the test feature step got greedy with RAM and our 20 GB guard-rail benched it twice (exactly why the guard-rail exists, and the PC never noticed). Root cause: each worker was carrying its own copy of our word-frequency tables, and we kept re-hiring the workers. Now it's one crew of 16, hired once. Result: leaner AND faster. The last 3 feature chunks took ~2 min total. 😎
+
+Where we are right now:
+  ✅ features for all 40.5M test candidate pairs
+  🔄 stage-1 scoring (4 fold models voting), then the group-aware stage 2, then decoding
+  ⏭️ official validator → first bankable submission in ~15 min
+
+Scoreboard reminder: validation macro-F0.5 = 0.9896 (public LB top 98.x). Next boss fight: a cross-encoder for the tricky near-twins.
+Grab a snack, I've got the stove. 🍳
