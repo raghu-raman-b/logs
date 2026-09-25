@@ -389,3 +389,19 @@ Next up: 15:31 → test-pair scoring (GPU) + stage-2 retrain (CPU) → pick best
 ETA: new validation score ~15:50; v2 test file ~16:20; LOCO result ~17:00 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: We caught a silent library gotcha: polars top_k() does not return values sorted. A brute-force test flagged it before it cost us points.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:18:47 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: cross-encoder: fold 0 ✅ done, fold 1 training
+What we're doing: GPU: cross-encoder fold 1 training. CPU: parked on purpose (the LOCO stress test needs ~15 GB and can't share the machine with the GPU job under our ~20 GB rule)
+Live jobs:
+  • job 'after_ce' running (RAM 0.0 GB, since -25 1)
+      latest: [15:09:14] waiting for er-ce
+  • job 'ce' running (RAM 10.0 GB, since -25 1)
+      latest: ce step 14500/15625 loss 0.0589 2090s (eta 3 min)
+Machine: RAM 15/31 GB used | GPU 99% busy, 11.2 GB VRAM, 70°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: 15:31 → test-pair scoring (GPU) + stage-2 retrain (CPU) → pick best on validation → v2 file → then LOCO
+ETA: new validation score ~15:50; v2 test file ~16:20; LOCO result ~17:00 IST
+Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
+Fun fact: France never appears in training, and 15% of the test businesses are French. Everything we build is country-agnostic on purpose.
