@@ -705,3 +705,17 @@ Next up: LOCO verdict → report with charts → methodology doc → final zip
 ETA: LOCO ~16:55; report + zip ~17:20 IST
 Note: Top-10 cutoff 0.976384 → we need ~+0.0026. France is the whole gap (implied France F0.5 ≈ 0.884 vs 0.99 elsewhere)
 Fun fact: If we matched perfectly within our retrieved candidates, validation would be 0.9993. That's our current ceiling.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:29:38 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: v1 on the LB: 0.973768 (~#30). v2 (val 0.9917) ready to upload
+What we're doing: LOCO stress test: train stage 1/2 on the US only, score India as a never-seen country (our France proxy)
+Live jobs:
+  • job 'loco_US' running (RAM 4.5 GB, since -25 1)
+      latest: p1: val macro F0.5 (cross-fitted thr) = 0.94443  thr=[0.88, 0.9]
+Machine: RAM 10/31 GB used | GPU 0% busy, 0.7 GB VRAM, 41°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: LOCO verdict → report with charts → methodology doc → final zip
+ETA: LOCO ~16:55; report + zip ~17:20 IST
+Note: Top-10 cutoff 0.976384 → we need ~+0.0026. France is the whole gap (implied France F0.5 ≈ 0.884 vs 0.99 elsewhere)
+Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
