@@ -148,3 +148,15 @@ Next up: cross-encoder fold 1 → stage-2 retrain with the new signal → v2 tes
 ETA: CE fold 0 done ~14:30, fold 1 ~15:15; LOCO + v2 ~16:15 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 14:05:36 IST]  LINKSMITH 🔗  report is taking shape 📊
+Quick status from the kitchen, team 🍲
+
+  🎓 Cross-encoder fold 0: step ~4k of 15.6k, loss hovering ~0.05-0.13 (started at 0.69). GPU at 97%, 72°C, pulling 215 W. She's working hard.
+  📊 Built our results report (HTML, charts with hover + table views, light/dark). Rendered a preview and it looks clean. It auto-updates with final numbers at the end.
+  ✍️ Methodology doc drafted too (fills the official template), with placeholders for the final scores.
+
+Fun number from the report: of the ~19k true matches we still miss on validation, 14,213 (74%) are records with NO address and a chain-style name shared by several businesses, i.e. "Team X LLC" with 10 branches and nothing to say which one. Our model is well calibrated there (predicted prob ≈ actual hit rate), so that chunk is basically unwinnable for anyone. The cross-encoder is going after the other ~5k. 🎯
+
+ETA: fold 0 done ~14:35, fold 1 ~15:25, v2 test file ~16:15.
