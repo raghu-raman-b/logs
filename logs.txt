@@ -112,3 +112,17 @@ Meanwhile in the kitchen 🍳: two bugs squashed before they cost us anything:
   • Froze its 192M-param vocabulary matrix to fit our 12 GB GPU comfortably (the transformer layers still learn fully).
 
 Cross-encoder is training now (~36 min per fold, 2 folds). Next post when fold 0 lands. ☕
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 13:57:48 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: v1 submission banked ✅ → now: cross-encoder for the tricky near-twins
+What we're doing: Training a multilingual cross-encoder (mdeberta-v3-base, MIT) on the ~6% of pairs our rankers are unsure about. 2 cross-fitted folds so every score stays honest
+Live jobs:
+  • job 'ce' running (RAM 8.7 GB, since -25 1)
+      latest: ce step 500/15625 loss 0.2380 72s (eta 36 min)
+Machine: RAM 12/31 GB used | GPU 98% busy, 11.1 GB VRAM, 71°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: Hidden-test insurance: leave-one-country-out stress test (train on US only → test on India) on the CPU while the GPU trains
+ETA: cross-encoder ~1h40m, then stage-2 retrain + test re-score ~25 min → v2 around 16:00 IST
+Note: v1 file: student_resource/output/matching_results.tsv (official validator: PASS)
+Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
