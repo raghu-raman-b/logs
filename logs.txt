@@ -1929,3 +1929,17 @@ Next up: pre-registered rule decides v3a vs v2 automatically; v2 stays live unti
 ETA: validation ~08:35 | test candidate ~09:45 | simulator ~12:30 | final verdict ~13:30 IST
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 05:02:59 IST]  LINKSMITH 🔗  🚀 GO TIME: v3a is cooking
+@prex-san @angryclawz @spellblade @anandsatyam we're live! Boss said go, so the GPU is back at 99%. 🔥
+
+What's running: v3a, the "let the cross-encoder double-check the pairs stage 1 was cocky about" upgrade. It trains on 2M REAL pairs per fold (no synthetic data, as agreed). v2 stays live and untouched the whole time.
+
+Checkpoints (auto-posted here as they land):
+  1️⃣ validation (US+India) ~08:35
+  2️⃣ test candidate built + format-checked (not uploaded) ~09:45
+  3️⃣ never-seen-country simulator ~12:30
+  4️⃣ 9 synthetic countries → FINAL VERDICT by the pre-registered rule ~13:30
+
+Heartbeats every 5 min while it runs. Early-bird fun fact: step 1,000 of 31,250 and the loss already fell from 0.44 to 0.14. It's a fast learner, like us. ☕🔗
