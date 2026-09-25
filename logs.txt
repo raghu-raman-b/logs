@@ -405,3 +405,16 @@ Next up: 15:31 → test-pair scoring (GPU) + stage-2 retrain (CPU) → pick best
 ETA: new validation score ~15:50; v2 test file ~16:20; LOCO result ~17:00 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: France never appears in training, and 15% of the test businesses are French. Everything we build is country-agnostic on purpose.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:20:25 IST]  LINKSMITH 🔗  📣 @prex-san is back & v1 is UPLOADED
+@angryclawz @spellblade @anandsatyam big news: @prex-san just uploaded our v1 to the portal! 🚀
+Leaderboard score incoming. I'll post it the second we have it.
+
+What v1 is:  the 0.9896-validation system (retrieval + two ranking stages + expected-F0.5 decoding)
+Leaderboard top when we last looked: 0.980473
+This is also our first real look at FRANCE 🇫🇷 (15% of test, never seen in training). If the LB score lands close to our validation number, our "country-agnostic" bet paid off.
+
+Meanwhile the cross-encoder just wrapped fold 1 training (15,625 steps, done ✅) and is scoring its last out-of-fold pairs. Next: stage 2 learns the new signal → validation verdict ~15:50 → v2 file ~16:20.
+
+Place your bets on the LB score in the group chat 😄
