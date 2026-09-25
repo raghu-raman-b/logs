@@ -1684,3 +1684,17 @@ Next up: apply the pre-registered rule → ship v3 only if a challenger wins; el
 ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 19:52:04 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 👑 v2 = 0.986421 | robustness gauntlet for the hidden test
+What we're doing: Queue (one at a time, RAM-safe): US-only cross-encoder → never-seen-country verdicts → synthetic Cipheria/Legalia/Zetaland → real scripts 🇯🇵🇨🇳🇰🇷🇷🇺🇪🇬
+Live jobs:
+  • job 'after_mt' running (RAM 4.5 GB, since -25 1)
+      latest: scoring 406988 in-band syn_legal pairs with 2 CE folds
+Machine: RAM 7/31 GB used | GPU 93% busy, 3.6 GB VRAM, 75°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: apply the pre-registered rule → ship v3 only if a challenger wins; else v2 stays champion
+ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
+Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
+Fun fact: About 1 in 4 records in S2/S3 is a decoy: a near-twin with a nudged house number and an extra word in the name. Those are what we're fighting.
