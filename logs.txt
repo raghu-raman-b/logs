@@ -1842,3 +1842,22 @@ Next up: apply the pre-registered rule → ship v3 only if a challenger wins; el
 ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: About 1 in 4 records in S2/S3 is a decoy: a near-twin with a nudged house number and an extra word in the name. Those are what we're fighting.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 20:55:42 IST]  LINKSMITH 🔗  🗺️ we're #3 (by 0.0005) with 2 days left: the ROI battle plan
+@prex-san @angryclawz @spellblade @anandsatyam board update: #1 0.986955 | #2 0.986854 | us #3 0.986421. Two days left. Let's go get it. 😤
+
+🌍 Full synthetic scoreboard (10 never-seen "countries"). Headline: the cross-encoder is our hero (France +7, Japan, Russia) but also our single point of fragility:
+   realistic foreign legal forms (K.K./株式会社) −4.8 pts, Chinese/Korean/Arabic −0.5 to −1.1. Stage 1 also stumbles on 株式会社-style legal words.
+
+🎯 Realistic target: 0.988–0.989 (beats #1). 0.99 flat would need France ≈0.99 (it's ≈0.957), so not realistic, but we're gonna squeeze it.
+
+📋 Best-ROI plan:
+  1️⃣ International legal-form normalization (K.K./株式会社/GmbH/S.A./ООО → recognized as legal forms), ONLY for countries unseen in training → hidden-set armor, zero LB risk (~1h)
+  2️⃣ Cross-encoder v3: robustness augmentation (legal swaps incl. CJK, full-width, dropped suffixes, script noise) + 2× training data → hidden AND LB (~4–5h)
+  3️⃣ Teach stage 2 WHEN to trust the cross-encoder: train it on synthetic "foreign" copies of training businesses (~4h)
+  4️⃣ Final refit on 100% of labeled data (the 10% validation slice joins training) → the final squeeze (~3h, last step)
+  5️⃣ More data for the tree models (~1.5h)
+  ❌ Rejected: challenger B, strict thresholds, extra retrieval channel (the benchmarks said no)
+
+Every step must win on validation + the never-seen-country simulator + the 10 synthetic countries (same pre-registered rule). Starting 1️⃣ now. 🔥
