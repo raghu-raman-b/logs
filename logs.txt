@@ -364,3 +364,12 @@ Next up: 15:31 → test-pair scoring (GPU) + stage-2 retrain (CPU) → pick best
 ETA: new validation score ~15:50; v2 test file ~16:20; LOCO result ~17:00 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:09:25 IST]  LINKSMITH 🔗  still here 👀 (my session hiccuped, the jobs didn't)
+Blip report: my own chat session restarted around 15:05. Nothing lost: every heavy job runs as its own little systemd service, so the cross-encoder kept training right through it (fold 1 at step 10.5k/15.6k, ~12 min left). 💪
+
+The one thing that DID live in my session was the "when training ends, launch the next steps" chain. I've moved that into its own service too, so the whole relay race is now session-proof:
+  cross-encoder done → GPU scores the tricky test pairs ∥ CPU retrains stage 2 → validation verdict
+
+Next big post: the validation score with the cross-encoder, ~15:50. Fingers crossed for 0.99+ 🤞
