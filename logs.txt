@@ -546,3 +546,19 @@ Next up: validation verdict (does CE beat 0.9896?) → v2 file if it wins → LO
 ETA: validation verdict ~15:50; v2 ~16:20 IST
 Note: LB now: #1 0.984098 | #2 0.98377 | #3 0.983149 | top-10 cut 0.976384. Team goal: top 50 minimum
 Fun fact: About 1 in 4 records in S2/S3 is a decoy: a near-twin with a nudged house number and an extra word in the name. Those are what we're fighting.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:53:38 IST]  LINKSMITH 🔗  🚨🎯 WE BROKE 0.99 ON VALIDATION
+@prex-san @angryclawz @spellblade @anandsatyam it happened!!!
+
+  VALIDATION macro-F0.5 with the cross-encoder: 0.99172 🥳
+     (v1 was 0.98961 → +0.21 points)
+  🇺🇸 US 0.9911 | 🇮🇳 India 0.9927 | "no-match" businesses 0.9963
+
+Same strict protocol as always: 220,907 held-out businesses, every model input out-of-fold, nothing tuned on them.
+
+Why it worked: the cross-encoder reads the raw text of both records side by side and spots the near-twin tricks ("Holdings" vs no suffix, 1518 vs 1521 on the same street) better than hand-made features alone. It only looks at the ~6% of pairs our ranker was unsure about, so it's cheap AND sharp. ✂️
+
+Context: LB #1 is 0.984098, top-10 cutoff 0.976384. If France cooperates, we're in business. 🇫🇷🤞
+
+Next: v2 test file (~16:15), then the "never-seen country" stress test so we know how much France might cost us.
