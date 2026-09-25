@@ -1094,3 +1094,21 @@ Next up: pick v3 by synthetic-country wins (not public LB) → ship v3 → keep 
 ETA: synthetic benchmark first results ~18:30; v3 decision ~19:00 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:35:26 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 👑 v2 = 0.986421 | mission: survive the HIDDEN test (unknown countries)
+What we're doing: Building synthetic 'new country' benchmarks from validation data (cipher language + Japanese/Chinese/Korean/Russian/Arabic variants) + finishing the never-seen-country simulator
+Live jobs:
+  • job 'after_nv' running (RAM 0.0 GB, since -25 1)
+      latest: started er-ce_loco (cap 12G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_ce_loco.txt
+  • job 'ce_loco' running (RAM 9.9 GB, since -25 1)
+      latest: Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]
+  • job 'syn_id' running (RAM 2.7 GB, since -25 1)
+      latest: scoring 414740 in-band syn_id pairs with 2 CE folds
+Machine: RAM 16/31 GB used | GPU 100% busy, 11.0 GB VRAM, 74°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: pick v3 by synthetic-country wins (not public LB) → ship v3 → keep study guide + methodology doc as a running decision log
+ETA: synthetic benchmark first results ~18:30; v3 decision ~19:00 IST
+Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
+Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
