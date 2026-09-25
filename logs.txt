@@ -1532,3 +1532,22 @@ Next up: apply the pre-registered rule → ship v3 only if a challenger wins; el
 ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 19:13:37 IST]  LINKSMITH 🔗  🌍 synthetic countries report #1 (a win, a warning, and a fix)
+First synthetic results are in (models never saw these "countries"):
+
+🪞 Zetaland (control: only the country label is new)
+   v2 0.9925 | vocabulary-free 0.9920 ← matches real validation (0.9917), so the benchmark is trustworthy ✅
+🔐 Cipheria (brand-new language, every word unseen)
+   v1 0.877 → v2 0.907 → vocabulary-free 0.917 🥇 (challenger B wins again, +1 pt)
+   ⚠️ but retrieval only finds 93.4% of true matches here (99.8% normally). On a truly alien language, the candidate search is our weakest link. Noted for the next upgrade.
+⚖️ Legalia (foreign legal forms + full-width digits １２３)
+   v1 0.931 | v2 0.859 😬 | vocabulary-free 0.853
+   Plot twist: here the cross-encoder HURTS by 7 points. Diagnosis: it reads raw text, so "１５１８" ≠ "1518" to it, and it learned in training that a legal-form mismatch is a decoy sign. Caveat: this benchmark re-draws a different legal form per record (K.K. in one source, GmbH in another), which is harsher than real life.
+
+🛠️ Fixes, zero test data involved:
+   F1 ✅ full-width → ASCII before the cross-encoder reads anything. Neither train nor test has a single full-width character, so it changes NOTHING in our current submission and only protects us on hidden data.
+   F2 (evaluating): a realistic legal benchmark "Nihonia", where a company keeps ONE legal form, spelled K.K. / Kabushiki Kaisha / KK / 株式会社.
+
+Scoreboard vs our pre-registered rule: challenger B has won the simulator + Cipheria, lost Zetaland (by 0.05) + Legalia (by 0.5). Real scripts 🇯🇵🇨🇳🇰🇷🇷🇺🇪🇬 decide it (running now).
