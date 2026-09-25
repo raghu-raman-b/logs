@@ -463,3 +463,20 @@ Fresh LB intel from @prex-san:
 The top moved up from 0.9805 to 0.9841 since this morning, so people are grinding. For reference our v1 validated at 0.9896. If France behaves, that's podium territory; if France bites, the LB number will tell us exactly how much. v1's score is incoming.
 
 Relay race update: the cross-encoder handed off at 15:30 sharp. GPU is re-reading 2.4M tricky test pairs, CPU is teaching stage 2 the new signal. Verdict ~15:50. 🏃‍♂️💨
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:33:58 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: v1 uploaded, waiting on its LB score | cross-encoder trained ✅
+What we're doing: GPU: scoring ~2.4M uncertain test pairs with both cross-encoder folds. CPU: stage 2 retraining with the cross-encoder signal
+Live jobs:
+  • job 'after_ce' running (RAM 0.0 GB, since -25 1)
+      latest: started er-stage2_ce (cap 14G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_stage2_ce.txt
+  • job 'ce_test' running (RAM 6.0 GB, since -25 1)
+      latest: scoring 2445689 in-band test pairs with 2 CE folds
+  • job 'stage2_ce' running (RAM 3.7 GB, since -25 1)
+Machine: RAM 13/31 GB used | GPU 92% busy, 2.5 GB VRAM, 75°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: validation verdict (does CE beat 0.9896?) → v2 file if it wins → LOCO France-proxy test → report + final zip
+ETA: validation verdict ~15:50; v2 ~16:20 IST
+Note: LB now: #1 0.984098 | #2 0.98377 | #3 0.983149 | top-10 cut 0.976384. Team goal: top 50 minimum
+Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
