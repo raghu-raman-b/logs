@@ -1112,3 +1112,20 @@ Next up: pick v3 by synthetic-country wins (not public LB) → ship v3 → keep 
 ETA: synthetic benchmark first results ~18:30; v3 decision ~19:00 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:38:21 IST]  LINKSMITH 🔗  🧪 synthetic countries are being born (+ docs are now a live decision log)
+Status from the lab 🔬
+
+🌍 SYNTHETIC "NEVER-SEEN COUNTRY" BENCHMARKS (built only from our held-out validation businesses)
+  • 🔐 Cipheria: a secret letter-swap cipher turns every word into a brand-new language. Typos, numbers and decoys all survive. Every word is unseen, like France (or Japan in romaji) would be.
+  • ⚖️ Legalia: legal forms swapped to K.K. / GmbH / S.p.A. / Sdn Bhd / 有限公司, plus Japanese-style full-width digits (１２３).
+  • 🪞 Zetaland: nothing changed except an unknown country label (the control group).
+  • next: 🇯🇵🇨🇳🇰🇷🇷🇺🇸🇦 real scripts, with part of the records translated by an open MIT translation model.
+  Each benchmark: 20,000 scored businesses, 191k competing businesses, 406k records, 770k true links.
+
+🐛 Bug caught in our own benchmark (proud of this one): v0 only included the sampled businesses, so records whose real owner wasn't sampled got "adopted" by the wrong business → fake over-matching. Fixed: every record's true owner is now in the competition, and we only score the sampled ones. Always test your tests. 😤
+
+📚 Docs: the study guide now has a live DECISION LOG (16 decisions so far: chosen vs. discarded, and why) + an engineering log. The official methodology doc got a new "unseen countries & development history" section with the France math and all discarded alternatives.
+
+⏱️ GPU queue: US-only cross-encoder (fold 1) → never-seen-country verdicts → synthetic benchmarks. Results trickling in from ~18:15.
