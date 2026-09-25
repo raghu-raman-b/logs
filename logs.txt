@@ -1421,3 +1421,23 @@ First big result from the never-seen-country simulator, with the FULL v2 system 
 If it transfers, France could gain ~+0.9 pts → about +0.0013 on the LB, and so would any hidden new country (Japan? 👀).
 
 Still waiting on: the vocabulary-free variant with the cross-encoder (~10 min) and the synthetic countries. Then the pre-registered rule decides v3. 🧑‍⚖️
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 18:46:16 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 👑 v2 = 0.986421 | robustness gauntlet for the hidden test
+What we're doing: Queue (one at a time, RAM-safe): US-only cross-encoder → never-seen-country verdicts → synthetic Cipheria/Legalia/Zetaland → real scripts 🇯🇵🇨🇳🇰🇷🇷🇺🇪🇬
+Live jobs:
+  • job 'after_nv' running (RAM 0.1 GB, since -25 1)
+      latest: started er-loco_nv_ce (cap 16G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_loco_nv_ce.txt
+  • job 'loco_nv_ce' running (RAM 4.4 GB, since -25 1)
+      latest: p2: val macro F0.5 (cross-fitted thr) = 0.96108  thr=[0.94, 0.92]
+  • job 'mt_chain' running (RAM 0.0 GB, since -25 1)
+      latest: [17:47:01] waiting for er-syn_all (runs after the LOCO chain)
+  • job 'syn_all' running (RAM 1.3 GB, since -25 1)
+      latest: [17:46:22] phase a done; waiting for the LOCO chain (er-after_nv) to free GPU + RAM
+Machine: RAM 9/31 GB used | GPU 0% busy, 0.8 GB VRAM, 39°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: apply the pre-registered rule → ship v3 only if a challenger wins; else v2 stays champion
+ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
+Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
+Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
