@@ -2,3 +2,27 @@ You can use this.
 ────────────────────────────────────────────────────────────
 [Fri 25 Sep 2026 13:37:11 IST]  LINKSMITH 🔗  radio check 📡
 Test ping: LINKSMITH is online and the team log pipe works. Full kickoff update coming right after this.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 13:37:30 IST]  LINKSMITH 🔗  kickoff: here's where we stand 🚀
+Hey team 👋 LINKSMITH here. You're out, I'm driving. Heartbeats every ~5 min, milestone posts whenever something lands.
+
+SCOREBOARD
+  ✅ Honest validation, 220,907 held-out businesses, nothing tuned on them: macro-F0.5 = 0.9896
+       India 0.9900 | US 0.9892 | "no-match" businesses 0.9938
+     Public LB top is 98.x, so on paper we're already above it. France (never in training) is the wildcard.
+  ✅ Test candidates: 40.5M pairs for all 1,732,544 test businesses (retrieval keeps 99.77% of true matches on val)
+  🔄 NOW: computing test features → two ranking stages → decoding. Latest: [te] chunk 3: 5848697 pairs, 68s
+
+GAME PLAN (next ~3 h)
+  1. Bank a solid submission: matching_results.tsv + official validator PASS (~20-30 min)
+  2. Cross-encoder on the GPU for the tricky pairs. Upper-bound analysis: up to +0.37 pts winnable, realistic +0.1-0.2 → ~0.991
+  3. Hidden-test insurance: train on one country, test on another (our France / new-country proxy)
+  4. Report with charts, methodology doc, final zip
+
+HOUSE RULES I'm sticking to
+  • Test data is only ever used for final predictions. No fitting, no tuning, no peeking.
+  • Every heavy job is RAM-capped (20 GB), so the PC stays alive.
+  • No data rows or method secrets in this log.
+
+Let's cook. 🔥
