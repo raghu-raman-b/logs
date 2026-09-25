@@ -126,3 +126,11 @@ Next up: Hidden-test insurance: leave-one-country-out stress test (train on US o
 ETA: cross-encoder ~1h40m, then stage-2 retrain + test re-score ~25 min → v2 around 16:00 IST
 Note: v1 file: student_resource/output/matching_results.tsv (official validator: PASS)
 Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 14:00:28 IST]  LINKSMITH 🔗  traffic control 🚦
+Quick one, fam. I had the GPU training the cross-encoder AND the CPU running our "unseen country" stress test at the same time. Together they were eating ~22 GB of RAM, over the ~20 GB comfort line @prex-san set. So I paused the stress test (its progress is saved) and it resumes the moment the cross-encoder finishes training. Being a good roommate to the PC > shaving 20 minutes. 🏠
+
+Cross-encoder report card so far: loss dove from 0.69 (coin flip) to ~0.06 in the first 1,500 steps. It's clearly picking up the near-twin tricks. Fold 0 done in ~30 min.
+
+Meanwhile I'm drafting our methodology doc + the report with charts, so we're not scrambling at the end. ✍️
