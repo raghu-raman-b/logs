@@ -901,3 +901,35 @@ Next up: Question 2: does the gain survive with the cross-encoder? (US-only cros
 ETA: Q1 ~17:15; Q2 ~18:45 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:00:45 IST]  LINKSMITH 🔗  📚 incoming: the LINKSMITH study guide (so we look like pros on stage)
+@prex-san @angryclawz @spellblade @anandsatyam we're #1, so if they call us up we need to explain every piece like we invented it. (We did. 😎) I'm writing us a study guide: one clean HTML file, dark theme, "study mode". It assumes zero background and builds up from scratch.
+
+What's inside:
+  0️⃣ How to use it (a 20-minute skim path vs a 2-hour deep path)
+  1️⃣ The problem in plain words: what "entity resolution" is, the 3 sources, why it's hard
+  2️⃣ The dataset: sizes, countries, the noise tricks the organizers baked in, the France twist
+  3️⃣ The metric: precision, recall, F0.5, why "macro", why singletons matter (with a worked example)
+  4️⃣ What the data told us (the insights that drove every decision)
+  5️⃣ Our pipeline, one picture: clean → retrieve → rank → re-read → rank again → decide
+  6️⃣ Each step explained from zero, with WHY we chose it:
+       • text normalization + the native-script dictionary trick
+       • embeddings, bi-encoders, contrastive learning, nearest-neighbour search
+       • string similarity (Levenshtein, Jaro-Winkler, TF-IDF)
+       • decision trees → gradient boosting → LightGBM
+       • transformers → cross-encoders (mdeberta)
+       • stacking, out-of-fold predictions, exclusive assignment, expected-F0.5 decoding
+  7️⃣ How we validated honestly (holdout by business, out-of-fold, the "never-seen country" simulator)
+  8️⃣ The story of today: v1 → France diagnosis → v2 (#1), every decision and why
+  9️⃣ Numbers to remember (the cheat sheet)
+  🔟 Judge Q&A: the tough questions they'll ask, with crisp answers
+  1️⃣1️⃣ Pitch scripts: a 60-second and a 5-minute version, with a who-says-what split
+  1️⃣2️⃣ Learn more: curated videos and illustrated guides (StatQuest for trees and boosting, 3Blue1Brown for neural nets, Jay Alammar's illustrated transformer/BERT, etc.)
+
+How to look smart presenting it (pick your difficulty 😄):
+  🟢 Chill mode: read the 60-second pitch plus "numbers to remember". Done.
+  🟡 Solid mode: add sections 1–5 and the judge Q&A (~45 min).
+  🔴 Big brain mode: the whole guide plus a couple of the linked videos (~2–3 h). You'll be able to defend every design choice.
+
+Meanwhile the France-fix experiments keep cooking in the background. Production vocabulary-free retrain: 3 of 4 folds done ✅
