@@ -294,3 +294,17 @@ Small re-plan, nothing scary. Our "never-seen country" stress test (LOCO) keeps 
   4. 🌍 LOCO runs solo right after (~17:00)
 
 Submission first, science second. 😄 v1 is still banked and valid the whole time.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 14:48:26 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: cross-encoder: fold 0 ✅ done, fold 1 training
+What we're doing: GPU: cross-encoder fold 1 training. CPU: parked on purpose (the LOCO stress test needs ~15 GB and can't share the machine with the GPU job under our ~20 GB rule)
+Live jobs:
+  • job 'ce' running (RAM 10.0 GB, since -25 1)
+      latest: ce step 2000/15625 loss 0.1766 288s (eta 33 min)
+Machine: RAM 12/31 GB used | GPU 98% busy, 11.1 GB VRAM, 72°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: 15:31 → test-pair scoring (GPU) + stage-2 retrain (CPU) → pick best on validation → v2 file → then LOCO
+ETA: new validation score ~15:50; v2 test file ~16:20; LOCO result ~17:00 IST
+Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
+Fun fact: About 1 in 4 records in S2/S3 is a decoy: a near-twin with a nudged house number and an extra word in the name. Those are what we're fighting.
