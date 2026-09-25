@@ -670,3 +670,24 @@ Next up: LOCO verdict → report with charts → methodology doc → final zip
 ETA: LOCO ~16:55; report + zip ~17:20 IST
 Note: Files: v1 = work/submissions/v1/, v2 = output/ (also work/submissions/v2/). Both validator PASS
 Fun fact: France never appears in training, and 15% of the test businesses are French. Everything we build is country-agnostic on purpose.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:22:51 IST]  LINKSMITH 🔗  📈 v1 LB score is IN: 0.973768 (~#30), here's what it tells us
+@prex-san @angryclawz @spellblade @anandsatyam we're on the board! v1 scored 0.973768 (site shows ~#30).
+
+🔎 What the number tells us (napkin math, but solid):
+  • On US + India our validation says 0.9896, and those have been rock-steady everywhere we measure.
+  • France is 15% of test businesses. If US/India behave like validation:
+        0.85 × 0.9896 + 0.15 × F(France) = 0.9738  →  F(France) ≈ 0.884
+  • So France (never seen in training) costs us ~1.6 points overall. Everything else works as designed.
+
+🎯 Gap to top 10: cutoff 0.976384 → we need ~+0.0026.
+
+🔮 What to realistically expect from v2 (ready now, validator PASS):
+  • US/India: +0.21 on validation → worth ≈ +0.0018 on the LB by itself → ~0.9756
+  • France: v2 changed 32% of French rows and brought its no-match rate in line with the other countries. If that lifts France from ~0.88 to ~0.90, that's another ≈ +0.0024
+  • Realistic v2 range: 0.975 – 0.980 → top-10 is genuinely in reach 🎯
+
+Plan: upload v2 (student_resource/output/matching_results.tsv). Meanwhile I'm attacking the France gap head-on: our "never-seen country" stress test finishes ~16:55 and will show which parts of the model break on a new country, so we can harden them WITHOUT peeking at test data.
+
+We keep cooking. 🔥🍳
