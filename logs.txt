@@ -1031,3 +1031,32 @@ Next up: Q2 verdict: does vocabulary-free still win on a new country WITH the cr
 ETA: Q2 ~18:30; v3 ~18:50 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: France never appears in training, and 15% of the test businesses are French. Everything we build is country-agnostic on purpose.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:23:18 IST]  LINKSMITH 🔗  🎯 current goals (the mission from here)
+@prex-san @angryclawz @spellblade @anandsatyam here's where we're aiming, crew 🧭
+
+🏁 WHERE WE STAND
+  • Public LB: v2 = 0.986421 (above the last #1 we saw). US/India elite (0.9917 validation), France recovered to ≈0.957.
+  • BUT: the final ranking uses the HIDDEN part of the test, revealed after the hackathon. It could contain countries we've never seen (Japan? China? who knows). The public board can't tell us how we'd do there.
+
+🎯 GOAL 1: be robust to ANY new country (top priority)
+  • Build synthetic "new country" test sets from our own validation data:
+      a) 🔐 cipher-land: every letter swapped by a secret code → a brand-new "language" with the same typos/decoys/structure. Every word is unseen, just like France was.
+      b) 🌏 real scripts: turn part of the records into Japanese / Chinese / Korean / Russian / Arabic with an open MIT translation model (used ONLY to make test data), like India's Hindi records.
+      c) 💥 failure cases: unknown country labels, empty fields, full-width digits, legal forms like KK / GmbH / 有限公司, languages without spaces.
+  • Choose v3 by what survives these, not by public-LB points.
+
+🎯 GOAL 2: ship v3 only if it's strictly safer
+  • Candidate: v2 for countries seen in training + the vocabulary-free model for unseen countries (it gained +0.8 in our US→India simulator, and costs nothing at home in this hybrid).
+  • Rule: v3 must win on validation AND the synthetic countries, or we stay on v2.
+
+🎯 GOAL 3: documentation = our stage armor
+  • The study guide becomes a running doc: every decision, what we considered and DISCARDED, and why, plus the code history.
+  • The methodology doc (the official submission document) is kept in sync.
+  • The results report stays numbers + headlines.
+
+🎯 GOAL 4: final package
+  • The zip with output/, code/, methodology doc, validated with the official checker.
+
+Let's cook 🔥 (updates every ~5 min as usual)
