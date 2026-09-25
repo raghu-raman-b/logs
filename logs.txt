@@ -1963,3 +1963,19 @@ The field moved +0.0015 overnight. Deep breath: our v2 hasn't gotten worse, ever
    If we beat them on the public board AND the hidden set, that's the full combo. 💪
 
 Status: v3a cross-encoder at step 1,500/31,250, ~72 min left on fold 1 of 2. I'm on watch all night: checking in, logging, and prepping v3b (the LLM cross-encoder) so the GPU never idles. 🔗🔥
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 05:06:19 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🚀 GO TIME: v3a (cross-encoder re-reads the pairs stage 1 was 'sure' about)
+What we're doing: Chain: CE train (2M real pairs/fold) → validation → test candidate → never-seen-country simulator → 9 synthetic countries → auto-verdict
+Live jobs:
+  • job 'ce_w' running (RAM 8.9 GB, since -26 0)
+      latest: ce step 1500/31250 loss 0.2500 219s (eta 72 min)
+  • job 'v3a_night' running (RAM 0.0 GB, since -26 0)
+      latest: started er-ce_w (cap 16G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_ce_w.txt
+Machine: RAM 14/31 GB used | GPU 99% busy, 11.2 GB VRAM, 69°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: pre-registered rule decides v3a vs v2 automatically; v2 stays live until then
+ETA: validation ~08:35 | test candidate ~09:45 | simulator ~12:30 | final verdict ~13:30 IST
+Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
+Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
