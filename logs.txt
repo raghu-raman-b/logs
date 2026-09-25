@@ -1641,3 +1641,18 @@ Next up: apply the pre-registered rule → ship v3 only if a challenger wins; el
 ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 19:36:53 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 👑 v2 = 0.986421 | robustness gauntlet for the hidden test
+What we're doing: Queue (one at a time, RAM-safe): US-only cross-encoder → never-seen-country verdicts → synthetic Cipheria/Legalia/Zetaland → real scripts 🇯🇵🇨🇳🇰🇷🇷🇺🇪🇬
+Live jobs:
+  • job 'after_mt' running (RAM 0.0 GB, since -25 1)
+  • job 'after_syn' running (RAM 9.7 GB, since -25 1)
+      latest: scoring 110867 in-band syn_mt_ar pairs with 2 CE folds
+Machine: RAM 7/31 GB used | GPU 91% busy, 2.3 GB VRAM, 67°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: apply the pre-registered rule → ship v3 only if a challenger wins; else v2 stays champion
+ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
+Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
+Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
