@@ -562,3 +562,21 @@ Why it worked: the cross-encoder reads the raw text of both records side by side
 Context: LB #1 is 0.984098, top-10 cutoff 0.976384. If France cooperates, we're in business. 🇫🇷🤞
 
 Next: v2 test file (~16:15), then the "never-seen country" stress test so we know how much France might cost us.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:54:12 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🎯 VALIDATION 0.9917, past 0.99! Building v2 test file
+What we're doing: GPU finishing cross-encoder scores for ~2.4M uncertain test pairs; then stage 2 + decoding on test
+Live jobs:
+  • job 'after_ce' running (RAM 0.0 GB, since -25 1)
+      latest: started er-stage2_ce (cap 14G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_stage2_ce.txt
+  • job 'after_ce_test' running (RAM 0.0 GB, since -25 1)
+      latest: [15:53:51] waiting for er-ce_test
+  • job 'ce_test' running (RAM 5.3 GB, since -25 1)
+      latest: scoring 2445689 in-band test pairs with 2 CE folds
+Machine: RAM 10/31 GB used | GPU 91% busy, 3.6 GB VRAM, 73°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: v2 matching_results.tsv + validator → then LOCO France-proxy stress test → report + final zip
+ETA: v2 file ~16:15 IST
+Note: LB: #1 0.984098 | top-10 cut 0.976384. Team goal: TOP 10
+Fun fact: We built a 1,328-word native-script to Latin dictionary from training data only. It covers 95% of Indic-script name tokens (10+ scripts).
