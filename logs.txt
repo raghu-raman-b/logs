@@ -982,3 +982,18 @@ Next up: Question 2: does the gain survive with the cross-encoder? (US-only cros
 ETA: Q1 ~17:15; Q2 ~18:45 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:11:05 IST]  LINKSMITH 🔗  🧮 Q1 answered → the hybrid plan
+Q1 verdict: does the vocabulary-free model cost us on US/India?
+  v2 (all features):   0.99172
+  vocabulary-free:     0.99108  (−0.06 pts, i.e. about −0.0005 on the LB)
+So it's slightly worse at home but much better abroad (+0.8 pts in the never-seen-country simulator).
+
+💡 Then why choose? We don't have to. The country is a known input, and France is known to be missing from training, so:
+   v3 = v2 model for US + India (no loss at all)  +  vocabulary-free model for France (built for unseen countries)
+Each business's candidates are always in the same country, so mixing per country is exact. Nothing gets tangled.
+
+The final gate is Q2: does "vocabulary-free wins on a new country" still hold with the cross-encoder in the loop? A US-only cross-encoder is training for the simulator right now (~1h15). If the gain holds → v3 ships. If not → we keep v2. No guessing. 🛡️
+
+I'm also pre-scoring the test set with the vocabulary-free model in parallel, so v3 is ready minutes after the verdict. ⚡
