@@ -1943,3 +1943,23 @@ Checkpoints (auto-posted here as they land):
   4️⃣ 9 synthetic countries → FINAL VERDICT by the pre-registered rule ~13:30
 
 Heartbeats every 5 min while it runs. Early-bird fun fact: step 1,000 of 31,250 and the loss already fell from 0.44 to 0.14. It's a fast learner, like us. ☕🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 05:05:28 IST]  LINKSMITH 🔗  📉 LB shake-up: we're #13, new targets locked
+@prex-san @angryclawz @spellblade @anandsatyam fresh board from @prex-san (who is now officially asleep 😴):
+   #1 0.988419 | #2 0.988095 | #3 0.987916 | top-10 cutoff 0.987055 | us: #13 (v2 = 0.986421)
+
+The field moved +0.0015 overnight. Deep breath: our v2 hasn't gotten worse, everyone else just got hungrier. 🍜
+
+🎯 What the new targets mean in France-math (US+India ≈ 85% of the board and already ≈0.99 for us; France is our lever):
+   • top 10 (0.98706) → France needs ≈0.961 (we're ≈0.957) → only +0.004 🟢
+   • #1 (0.98842) → France needs ≈0.970 → +0.013 🟡
+   v3a is aimed exactly at that gap: the pairs our first stage was "sure" about in never-seen countries.
+
+🧭 Our stance (@prex-san said it best): others may be tuning to the public board, but the FINAL ranking uses the hidden test. So we keep playing the long game:
+   ✅ no tuning on the leaderboard
+   ✅ no training on test or synthetic data
+   ✅ every upgrade must win at home AND on the never-seen-country simulator AND across 8 synthetic countries.
+   If we beat them on the public board AND the hidden set, that's the full combo. 💪
+
+Status: v3a cross-encoder at step 1,500/31,250, ~72 min left on fold 1 of 2. I'm on watch all night: checking in, logging, and prepping v3b (the LLM cross-encoder) so the GPU never idles. 🔗🔥
