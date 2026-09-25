@@ -1877,3 +1877,35 @@ Next up: pre-registered rule decides v3a vs v2 automatically; v2 stays live unti
 ETA: validation ~01:30 | test candidate ~02:45 | simulator ~05:15 | final verdict ~06:30 IST
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about — the CE never looked at them. v3a lets it look.
 Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 21:19:36 IST]  LINKSMITH 🔗  🧭 v3 decisions + night shift is ON
+@prex-san @angryclawz @spellblade @anandsatyam evening, crew. Big planning session with @prex-san just now. Here's where we landed. 🧭
+
+✅ DECISIONS
+ 1. Synthetic data = EVALUATION ONLY. Good catch from @prex-san: if we train on the same "foreign" tricks we test with, our benchmarks start grading their own homework. Every model trains on the provided data. Full stop. (I had two plan items that broke this; both are scrapped/rewritten.)
+ 2. Blending v2 with challenger B → rejected. Tested every mix: the score just slides from one to the other; no mix beats both. Fastest rejection of my career. ⚡
+ 3. Legal-form list (K.K./GmbH/株式会社…) → demoted. It's a hand-written dictionary (not brute force), can't move the leaderboard, and any benchmark gain would be partly circular. Cheap insurance for later; CPU-only filler work.
+
+🔍 THE FIND OF THE DAY
+The cross-encoder (our text-reading model) only double-checks pairs stage 1 is UNSURE about. In a country the models never saw, half of our wrong matches were pairs stage 1 was >99% SURE about, so the cross-encoder never got a look. At home that basically never happens (176 vs 6,193). Stage 1 trusts US/India word statistics and gets cocky on new words. That smells EXACTLY like our France gap (implied ≈0.957 vs 0.99 at home), and like whatever the hidden set throws at us.
+
+🤖 "Can better models / an LLM layer help?"
+ • Better retrieval? No: it already keeps 99.9% of what a perfect matcher needs.
+ • Bigger tree models? Marginal: they're not the bottleneck.
+ • A big LLM (7–8B) judging pairs zero-shot? Probably HURTS: it doesn't know this dataset's decoy rules ("X Holdings" and a house number off by 3 = a DIFFERENT business here), it's uncalibrated, and on our 12 GB GPU it needs 4-bit squeezing.
+ • The version that CAN help: a small LLM (Qwen3-0.6B, Apache-2.0) FINE-TUNED as a second cross-encoder and averaged with the current one. It has read tons of Japanese/Chinese/Arabic/Cyrillic text, which is exactly the hidden-set risk. That's v3b, tomorrow.
+
+📜 SHIPPING RULE (unchanged, written BEFORE results): v3 replaces v2 only if validation holds (≥ −0.0003), the never-seen-country simulator improves (≥ +0.003), AND it wins ≥6 of the 8 non-control synthetic countries. Small correction to what I said earlier: it's 8 non-control countries, not 9.
+
+🌙 NIGHT SHIFT (running now, fully automatic, RAM-capped, v2 untouched):
+  1️⃣ v3a cross-encoder: re-reads every plausible pair; 2M REAL pairs per fold (~3h)
+  2️⃣ validation checkpoint → auto-post (~01:30)
+  3️⃣ test candidate built + format-validated, NOT uploaded (~02:45)
+  4️⃣ never-seen-country simulator → auto-post (~05:15)
+  5️⃣ 9 synthetic countries → FINAL VERDICT auto-posted by the rule (~06:30)
+Heartbeats every 5 min while jobs run. If anything breaks, the chain stops and posts why; v2 stays live no matter what.
+
+☀️ MORNING MENU: read the verdict → if v3a passes, upload it → start v3b (the LLM cross-encoder ensemble) + more data for the trees.
+
+Sleep well, crew. The GPU and I have got the night. 🔥🔗
