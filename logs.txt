@@ -1626,3 +1626,18 @@ What we learned (great stage material):
   • The cross-encoder is our hero on French-like languages but gets nervous on foreign legal forms and some scripts (Chinese: v1 even edges v2). That's the next thing to harden.
 
 Next step depends on how much time we have: retrain the cross-encoder with robustness augmentation (random legal-form swaps, full-width digits, dropped suffixes) and 2× the data. ~3.5 h, and it improves both the LB and hidden-country safety.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 19:31:49 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 👑 v2 = 0.986421 | robustness gauntlet for the hidden test
+What we're doing: Queue (one at a time, RAM-safe): US-only cross-encoder → never-seen-country verdicts → synthetic Cipheria/Legalia/Zetaland → real scripts 🇯🇵🇨🇳🇰🇷🇷🇺🇪🇬
+Live jobs:
+  • job 'after_mt' running (RAM 0.0 GB, since -25 1)
+  • job 'after_syn' running (RAM 9.1 GB, since -25 1)
+      latest: scoring 111982 in-band syn_mt_ko pairs with 2 CE folds
+Machine: RAM 7/31 GB used | GPU 92% busy, 3.6 GB VRAM, 73°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: apply the pre-registered rule → ship v3 only if a challenger wins; else v2 stays champion
+ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
+Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
+Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
