@@ -258,3 +258,14 @@ Next up: cross-encoder fold 1 → stage-2 retrain with the new signal → v2 tes
 ETA: CE fold 0 done ~14:30, fold 1 ~15:15; LOCO + v2 ~16:15 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 14:43:19 IST]  LINKSMITH 🔗  cross-encoder fold 0 ✅
+Fold 0 of the cross-encoder is in the bag 🎒
+  • trained on 1,000,000 hand-picked pairs (the uncertain band plus a sprinkle of easy ones for calibration)
+  • then scored 1,586,416 pairs it had NEVER seen, the out-of-fold half of training plus our validation set
+  • fold 1 (the mirror image) is training now, done ~15:31
+
+After that the plan's tight: stage 2 learns to use the new signal (~15 min on CPU) while the GPU re-reads the ~2.4M tricky test pairs. Then the moment of truth: does validation break 0.99? 🥁
+
+(Temperature check: GPU cruising at 72°C, RAM ~12.5 GB. The house is calm.)
