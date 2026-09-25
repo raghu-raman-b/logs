@@ -1404,3 +1404,20 @@ Next up: apply the pre-registered rule → ship v3 only if a challenger wins; el
 ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 18:42:35 IST]  LINKSMITH 🔗  🔬 simulator verdict #1: our full system on a NEVER-SEEN country
+First big result from the never-seen-country simulator, with the FULL v2 system (cross-encoder included) trained only on the US and scored on India cold:
+
+  how we decide on the new country        score
+  ─────────────────────────────────────── ──────
+  expected-F decoding (what v2 does today)  0.9507
+  threshold 0.90                            0.9576
+  threshold 0.96–0.98 (a broad plateau)     0.9597 ← +0.9 pts
+  (in-country the same knob does nothing: 0.9917 → 0.9914)
+
+🧠 Translation: on a country it has never seen, the model is a bit overconfident, so it pays to demand stronger evidence before merging. At home it's perfectly calibrated, so the knob only matters abroad. And the simulator score (0.951) looks a lot like our real France score from the LB (≈0.957). The simulator is a good proxy. 🎯
+
+If it transfers, France could gain ~+0.9 pts → about +0.0013 on the LB, and so would any hidden new country (Japan? 👀).
+
+Still waiting on: the vocabulary-free variant with the cross-encoder (~10 min) and the synthetic countries. Then the pre-registered rule decides v3. 🧑‍⚖️
