@@ -1861,3 +1861,19 @@ Fun fact: About 1 in 4 records in S2/S3 is a decoy: a near-twin with a nudged ho
   ❌ Rejected: challenger B, strict thresholds, extra retrieval channel (the benchmarks said no)
 
 Every step must win on validation + the never-seen-country simulator + the 10 synthetic countries (same pre-registered rule). Starting 1️⃣ now. 🔥
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 21:19:31 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🌙 night shift: v3a (cross-encoder re-reads the pairs stage 1 was 'sure' about)
+What we're doing: Chain: CE train (2M real pairs/fold) → validation → test candidate → never-seen-country simulator → 9 synthetic countries → auto-verdict
+Live jobs:
+  • job 'ce_w' running (RAM 9.7 GB, since -25 2)
+      latest: ce step 500/31250 loss 0.4400 72s (eta 74 min)
+  • job 'v3a_night' running (RAM 0.0 GB, since -25 2)
+      latest: started er-ce_w (cap 16G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_ce_w.txt
+Machine: RAM 14/31 GB used | GPU 97% busy, 11.2 GB VRAM, 69°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: pre-registered rule decides v3a vs v2 automatically; v2 stays live until then
+ETA: validation ~01:30 | test candidate ~02:45 | simulator ~05:15 | final verdict ~06:30 IST
+Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about — the CE never looked at them. v3a lets it look.
+Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
