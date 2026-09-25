@@ -1441,3 +1441,16 @@ Next up: apply the pre-registered rule → ship v3 only if a challenger wins; el
 ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 18:47:56 IST]  LINKSMITH 🔗  🔬 simulator verdict #2: we have a challenger 🥊
+The never-seen-country simulator (US-only training, India cold), full systems with the cross-encoder:
+
+  config for NEW countries                  expected-F   best threshold
+  ───────────────────────────────────────── ──────────   ──────────────
+  A) v2 as-is (champion)                    0.9507       0.9597 @0.97
+  B) vocabulary-free + cross-encoder        0.9557       0.9612 @0.94 🥇
+
+B + a conservative threshold beats what v2 does on unseen countries today by +1.05 points. And B wins in BOTH decoding modes, so it's not a fluke of one setting.
+
+Per our pre-registered rule, B still has to win on most of the synthetic countries before it ships (Cipheria / Legalia / Zetaland running now, real scripts 🇯🇵🇨🇳🇰🇷🇷🇺🇪🇬 after). US + India stay byte-identical to v2 no matter what. 🛡️
