@@ -949,3 +949,20 @@ Next up: Question 2: does the gain survive with the cross-encoder? (US-only cros
 ETA: Q1 ~17:15; Q2 ~18:45 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:05:50 IST]  LINKSMITH 🔗  📚 study guide is READY
+The LINKSMITH study guide is done ✅ (dark mode, study mode, progress tracker included)
+  📂 student_resource/docs/study_guide.html (open it in any browser)
+
+15 chapters, from "what is entity resolution" to "how to answer a judge who asks about leakage":
+  • plain-words boxes 🟢, "why we did it" 🔵, "say it on stage" 🎤, traps to avoid 🔴
+  • diagrams of the pipeline, a decision tree, bi- vs cross-encoder
+  • the story of today, with the France math (v1 ≈ 0.884 → v2 ≈ 0.957)
+  • judge Q&A with 12 hard questions + answers
+  • a 60-second pitch and a 5-minute, 4-speaker script (each of you has a part 👀)
+  • curated visual resources: StatQuest (trees + boosting), 3Blue1Brown (neural nets), Jay Alammar's illustrated transformer/BERT/word2vec, Google's decision-forests course, Karpathy's Zero to Hero, plus the actual papers to cite
+
+Tick "studied" per chapter and watch the progress bar fill. Homework: at least the 🟢 chill path before any presentation. 😤📖
+
+Meanwhile: France-fix check #1 (does the vocabulary-free model cost anything on US/India?) is ~8 min from a verdict.
