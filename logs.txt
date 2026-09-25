@@ -1596,3 +1596,19 @@ Next up: apply the pre-registered rule → ship v3 only if a challenger wins; el
 ETA: simulator ~18:30 | synthetics ~18:50 | real scripts ~19:40 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: If we matched perfectly within our retrieved candidates, validation would be 0.9993. That's our current ceiling.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 19:27:38 IST]  LINKSMITH 🔗  🇯🇵 Japan benchmark is in, and the champion defends 👑
+Synthetic JAPAN (35% of names machine-translated into Japanese, e.g. "GTG Hemp Private Limited" → "グローバル ハンパ プライベート リミテッド"):
+
+                          smart decoder   strict threshold 0.94
+  v1                      0.9277          0.8944
+  v2 (our champion)       0.9363 🥇        0.9141
+  challenger B            0.9228          0.8944
+
+✅ Good news: retrieval handles real scripts fine (98.5% of true matches found). The weak retrieval we saw in Cipheria was an artifact of the cipher, not a real-language problem. No need for a new retrieval channel.
+🛑 Plot twist: on real foreign scripts, the "be stricter on new countries" idea BACKFIRES (−2.2 pts). Translated names are real matches that look less certain, so a strict threshold throws them away.
+
+🧑‍⚖️ Pre-registered rule tally: challenger B 2 wins (India simulator, Cipheria) vs 3 losses (Zetaland, Legalia, Japan). Chinese/Korean/Russian/Arabic still running, but it's looking like v2 stays champion. That's exactly why we wrote the rule BEFORE seeing results: the simulator alone would have fooled us into shipping B. 🙏
+
+Lesson for the stage: "we tested the fix on 7 synthetic countries and it only helped on some, so we didn't ship it." Judges LOVE that. 🎤
