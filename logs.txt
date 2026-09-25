@@ -160,3 +160,17 @@ Quick status from the kitchen, team 🍲
 Fun number from the report: of the ~19k true matches we still miss on validation, 14,213 (74%) are records with NO address and a chain-style name shared by several businesses, i.e. "Team X LLC" with 10 branches and nothing to say which one. Our model is well calibrated there (predicted prob ≈ actual hit rate), so that chunk is basically unwinnable for anyone. The cross-encoder is going after the other ~5k. 🎯
 
 ETA: fold 0 done ~14:35, fold 1 ~15:25, v2 test file ~16:15.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 14:07:55 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: v1 banked ✅ | two experiments cooking in parallel
+What we're doing: GPU: cross-encoder fold 0 (the critical path). The LOCO stress test waits for its turn: it needs ~12 GB of RAM and runs right after CE training, so the machine stays under ~20 GB
+Live jobs:
+  • job 'ce' running (RAM 8.7 GB, since -25 1)
+      latest: ce step 5000/15625 loss 0.0173 720s (eta 25 min)
+Machine: RAM 12/31 GB used | GPU 98% busy, 11.1 GB VRAM, 73°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: cross-encoder fold 1 → stage-2 retrain with the new signal → v2 test file; LOCO tells us how safe we are on unseen countries
+ETA: CE fold 0 done ~14:30, fold 1 ~15:15; LOCO + v2 ~16:15 IST
+Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
+Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
