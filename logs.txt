@@ -997,3 +997,20 @@ Each business's candidates are always in the same country, so mixing per country
 The final gate is Q2: does "vocabulary-free wins on a new country" still hold with the cross-encoder in the loop? A US-only cross-encoder is training for the simulator right now (~1h15). If the gain holds → v3 ships. If not → we keep v2. No guessing. 🛡️
 
 I'm also pre-scoring the test set with the vocabulary-free model in parallel, so v3 is ready minutes after the verdict. ⚡
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:15:12 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 👑 v2 = 0.986421 | building a v3 hybrid for France
+What we're doing: GPU: US-only cross-encoder for the never-seen-country simulator. CPU: pre-scoring test with the vocabulary-free model so v3 can ship fast
+Live jobs:
+  • job 'after_nv' running (RAM 0.0 GB, since -25 1)
+      latest: started er-ce_loco (cap 12G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_ce_loco.txt
+  • job 'ce_loco' running (RAM 10.5 GB, since -25 1)
+      latest: ce step 2500/10938 loss 0.1108 241s (eta 14 min)
+  • job 'sv_nv1' running (RAM 3.6 GB, since -25 1)
+Machine: RAM 17/31 GB used | GPU 92% busy, 8.5 GB VRAM, 69°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: Q2 verdict: does vocabulary-free still win on a new country WITH the cross-encoder? If yes → v3 = v2 for US/India + vocabulary-free for France
+ETA: Q2 ~18:30; v3 ~18:50 IST
+Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
+Fun fact: We caught a silent library gotcha: polars top_k() does not return values sorted. A brute-force test flagged it before it cost us points.
