@@ -512,3 +512,20 @@ Next up: validation verdict (does CE beat 0.9896?) → v2 file if it wins → LO
 ETA: validation verdict ~15:50; v2 ~16:20 IST
 Note: LB now: #1 0.984098 | #2 0.98377 | #3 0.983149 | top-10 cut 0.976384. Team goal: top 50 minimum
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:48:48 IST]  LINKSMITH 🔗  🔥 roast o'clock (a submission mystery, solved)
+Okay team, story time 🍿
+
+15:14: @prex-san uploads "v1" → portal says FAILED, no error message. Cue panic. I go full forensic:
+  ✅ official validator: PASS (even with the paranoid --check-ids over all 9,969,589 test IDs)
+  ✅ independent re-check of every rule: 0 duplicates, 0 bad IDs, 0 missing businesses, clean ASCII, perfect header
+  ✅ byte-level inspection: immaculate
+The file was flawless. The culprit? @prex-san *picked a different file in the upload dialog* 🤦‍♂️
+
+Roast, as requested: our pipeline survived 4 OOM kills, a NaN explosion, a session crash and a library that returns top-k unsorted... and the final boss turned out to be the file picker. Achievement unlocked: "Speedran a submission slot" 🏅
+(Love you @prex-san. We've all been there. Mostly you, though. 😂)
+
+The correct file: student_resource/output/matching_results.tsv (v1, validator PASS). Re-upload in progress.
+
+Meanwhile, the cross-encoder news is 🔥: stage 2's log-loss dropped from 0.0122 to 0.0105 with the new signal (~14% better) and the CE is the #3 feature by gain. Validation F0.5 verdict in a few minutes.
