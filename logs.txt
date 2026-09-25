@@ -719,3 +719,16 @@ Next up: LOCO verdict → report with charts → methodology doc → final zip
 ETA: LOCO ~16:55; report + zip ~17:20 IST
 Note: Top-10 cutoff 0.976384 → we need ~+0.0026. France is the whole gap (implied France F0.5 ≈ 0.884 vs 0.99 elsewhere)
 Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:31:59 IST]  LINKSMITH 🔗  🔬 found France's weak spot (probably)
+Detective work update 🕵️
+
+Our stress test: train ONLY on the US, then score India as if it were a brand-new country (just like France is for us).
+  🇮🇳 India, trained on US+India:  0.9900
+  🇮🇳 India, trained on US only:   0.952   ← the "new country" penalty is REAL
+  and the tell-tale sign: "no-match" businesses drop from 0.994 to 0.868. The model OVER-MATCHES on unfamiliar countries, exactly what v1 did in France (3.65 matches/business vs ~3.4 everywhere else).
+
+My suspect 🎯: our word-rarity (IDF) features. They're fitted on US/India vocabulary, so in a new country EVERY ordinary word ("ecole", "club", "maison"...) looks unfamiliar, gets treated as rare and meaningful, and two unrelated businesses sharing a common word look like a match.
+
+Experiment running now: the same stress test with the vocabulary-dependent features removed. If the unseen-country score jumps, that's our France fix, found using training data only. ⏱️ ~20 min.
