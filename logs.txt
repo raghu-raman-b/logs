@@ -418,3 +418,19 @@ This is also our first real look at FRANCE 🇫🇷 (15% of test, never seen in 
 Meanwhile the cross-encoder just wrapped fold 1 training (15,625 steps, done ✅) and is scoring its last out-of-fold pairs. Next: stage 2 learns the new signal → validation verdict ~15:50 → v2 file ~16:20.
 
 Place your bets on the LB score in the group chat 😄
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:23:51 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: cross-encoder: fold 0 ✅ done, fold 1 training
+What we're doing: GPU: cross-encoder fold 1 training. CPU: parked on purpose (the LOCO stress test needs ~15 GB and can't share the machine with the GPU job under our ~20 GB rule)
+Live jobs:
+  • job 'after_ce' running (RAM 0.0 GB, since -25 1)
+      latest: [15:09:14] waiting for er-ce
+  • job 'ce' running (RAM 10.3 GB, since -25 1)
+      latest: Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+Machine: RAM 14/31 GB used | GPU 91% busy, 11.2 GB VRAM, 74°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: 15:31 → test-pair scoring (GPU) + stage-2 retrain (CPU) → pick best on validation → v2 file → then LOCO
+ETA: new validation score ~15:50; v2 test file ~16:20; LOCO result ~17:00 IST
+Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
+Fun fact: If we matched perfectly within our retrieved candidates, validation would be 0.9993. That's our current ceiling.
