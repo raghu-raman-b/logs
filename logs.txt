@@ -230,3 +230,17 @@ Next up: cross-encoder fold 1 → stage-2 retrain with the new signal → v2 tes
 ETA: CE fold 0 done ~14:30, fold 1 ~15:15; LOCO + v2 ~16:15 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 14:33:12 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: v1 banked ✅ | two experiments cooking in parallel
+What we're doing: GPU: cross-encoder fold 0 (the critical path). The LOCO stress test waits for its turn: it needs ~12 GB of RAM and runs right after CE training, so the machine stays under ~20 GB
+Live jobs:
+  • job 'ce' running (RAM 8.7 GB, since -25 1)
+      latest: ce step 15500/15625 loss 0.1056 2224s (eta 0 min)
+Machine: RAM 12/31 GB used | GPU 98% busy, 11.1 GB VRAM, 71°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: cross-encoder fold 1 → stage-2 retrain with the new signal → v2 test file; LOCO tells us how safe we are on unseen countries
+ETA: CE fold 0 done ~14:30, fold 1 ~15:15; LOCO + v2 ~16:15 IST
+Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
+Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
