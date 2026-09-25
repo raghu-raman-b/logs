@@ -65,3 +65,16 @@ Next up: Official validator on matching_results.tsv, then the cross-encoder on t
 ETA: upload file ~15 min; improved final system ~2.5-3 h
 Note: RAM-capped jobs; the PC is chilling at well under 20 GB
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 13:47:40 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: Test inference, run #1 (the 0.9896-validation system)
+What we're doing: Features for all 40.5M test pairs are done. Scoring them with our stage-1 ranker (4 fold models), then the stage-2 group model and decoding
+Live jobs:
+  • job 'test_pipeline' running (RAM 9.1 GB, since -25 1)
+Machine: RAM 13/31 GB used | GPU 1% busy, 2.5 GB VRAM, 43°C
+Best validation macro-F0.5 so far: 0.9896  (public LB top is ~0.98x; our target 0.99)
+Next up: Official validator on matching_results.tsv, then the cross-encoder on the GPU to push us past 0.99
+ETA: upload file ~15 min; improved final system ~2.5-3 h
+Note: RAM-capped jobs; the PC is chilling at well under 20 GB
+Fun fact: About 1 in 4 records in S2/S3 is a decoy: a near-twin with a nudged house number and an extra word in the name. Those are what we're fighting.
