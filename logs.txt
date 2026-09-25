@@ -837,3 +837,19 @@ Next up: only ship v3 if it beats v2 on BOTH validation and the never-seen-count
 ETA: France-fix verdict ~16:55; v3 ~17:30 IST
 Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:48:26 IST]  LINKSMITH 🔗  🧪 France-fix #1 confirmed in the simulator
+Science update 🔬 (defending the crown the right way)
+
+Our "never-seen country" simulator (train on the US only, score India cold):
+  baseline features:          0.9466
+  vocabulary-free features:   0.9546  ← +0.8 points on a brand-new country 📈
+  and "no-match" accuracy went from 0.868 to 0.883, so less over-matching, exactly the France disease.
+  Bonus: the model stays calibrated on the new country (flat threshold curve), so our smart decoder works there again.
+
+Before shipping it I need 2 answers, both running NOW in parallel:
+  🖥️ CPU: does dropping those features cost us anything on US/India (85% of the LB)? (~25 min)
+  🎮 GPU: does the gain survive with the cross-encoder in the loop? Training a US-only cross-encoder for the simulator (~1h15)
+
+Rule of the house: v3 ships only if it wins both. 🛡️👑
