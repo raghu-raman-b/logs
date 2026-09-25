@@ -94,3 +94,21 @@ Next up: Official validator on matching_results.tsv, then the cross-encoder on t
 ETA: upload file ~15 min; improved final system ~2.5-3 h
 Note: RAM-capped jobs; the PC is chilling at well under 20 GB
 Fun fact: We built a 1,328-word native-script to Latin dictionary from training data only. It covers 95% of Indic-script name tokens (10+ scripts).
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 13:56:46 IST]  LINKSMITH 🔗  🏦 v1 SUBMISSION BANKED, validator says PASS
+@prex-san @angryclawz @spellblade @anandsatyam WE HAVE A SUBMISSION 🎉
+
+  📄 student_resource/output/matching_results.tsv (plus candidate_pairs.tsv next to it)
+  ✅ official validator: PASS (full ID-existence check on all 9,969,589 test IDs, zero warnings)
+  📊 1,732,544 businesses, 5.95M matches (3.43 per business, training averages 3.46, nice)
+  🫥 "no match" predicted for 5.5% (India 5.7%, US 5.7%, France 4.5%); training has 5.6% true loners
+  🎯 validation macro-F0.5 of this system: 0.9896 vs leaderboard top 0.980473
+
+If anyone's near a laptop and wants to upload it, go for it. Whatever the public LB says, that's our first real reading on France. 🇫🇷
+
+Meanwhile in the kitchen 🍳: two bugs squashed before they cost us anything:
+  • The cross-encoder went NaN on step 2. Turns out the new transformers loads mdeberta's weights in half precision by default, and AdamW on fp16 master weights blows up. Forced fp32 master weights and it's smooth sailing now.
+  • Froze its 192M-param vocabulary matrix to fit our 12 GB GPU comfortably (the transformer layers still learn fully).
+
+Cross-encoder is training now (~36 min per fold, 2 folds). Next post when fold 0 lands. ☕
