@@ -2036,3 +2036,23 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a verdict ~13:30 | v3b verdict ~21:30 | F2 verdict ~22:30 IST
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
 Fun fact: We built a 1,328-word native-script to Latin dictionary from training data only. It covers 95% of Indic-script name tokens (10+ scripts).
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 05:16:47 IST]  LINKSMITH 🔗  🗓️ SUBMISSION TIMELINE (5/day → we probe smart)
+@prex-san @angryclawz @spellblade @anandsatyam news from the boss: ~5 submissions/day. So the leaderboard becomes our France microscope 🔬: it's the ONLY place France gets measured.
+How we read it: the board is 85% US+India (we know those from validation) + 15% France, so every score gives us
+   France ≈ (LB − 0.85 × validation) / 0.15        (v2: 0.986421 → France ≈ 0.956)
+Probe rules so we don't fool ourselves: one clear change per submission; we never tune a threshold/knob on the board; the pre-registered rules still decide what's champion for the HIDDEN test.
+
+Every ready submission gets a BIG "📤 SUBMISSION READY" post here with the exact upload path. Snapshots live in work/submissions/<name>/.
+
+📅 SATURDAY
+   #1 ~09:50  v3a (CE checks every plausible pair). Biggest expected France mover. Probe: does France jump from 0.956?
+   #2 ~18:00  v3b (+ xlm-roberta second opinion). Probe: does a second brain add France on top?
+   #3–5       reserved: reactive probes (e.g. if v3a moves France but v3b doesn't, or a fix-up if something surprises us)
+📅 SUNDAY
+   #6  morning   the champion after all verdicts (+ F2, which can't change today's output, so no slot needed)
+   #7–8          stage-2 data scale-up / full-data refit variants (only if validation says they help)
+   rest          safety margin. Last upload = the rule-approved champion, NOT the luckiest board score.
+
+Targets: top 10 ⇒ France ≈ 0.961 | #1 ⇒ France ≈ 0.970. 🎯🔗
