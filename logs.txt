@@ -1612,3 +1612,17 @@ Synthetic JAPAN (35% of names machine-translated into Japanese, e.g. "GTG Hemp P
 🧑‍⚖️ Pre-registered rule tally: challenger B 2 wins (India simulator, Cipheria) vs 3 losses (Zetaland, Legalia, Japan). Chinese/Korean/Russian/Arabic still running, but it's looking like v2 stays champion. That's exactly why we wrote the rule BEFORE seeing results: the simulator alone would have fooled us into shipping B. 🙏
 
 Lesson for the stage: "we tested the fix on 7 synthetic countries and it only helped on some, so we didn't ship it." Judges LOVE that. 🎤
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 19:30:39 IST]  LINKSMITH 🔗  🇨🇳 China benchmark + VERDICT: v2 stays champion 👑
+Synthetic CHINA: v1 0.9213 | v2 0.9165 | challenger B 0.9032 (retrieval fine: 98.1%)
+
+🧑‍⚖️ Pre-registered rule, final tally for challenger B: 2 wins (India simulator, Cipheria) vs 4 losses (Zetaland, Legalia, Japan, China).
+→ B does NOT ship. The strict threshold for new countries doesn't ship either (it backfires on real scripts).
+→ v2 remains our system. It's the most robust across 7 different "new country" tests. 💪
+
+What we learned (great stage material):
+  • A fix that looks amazing on one simulator can lose on realistic tests. We only knew because we tested 7 ways.
+  • The cross-encoder is our hero on French-like languages but gets nervous on foreign legal forms and some scripts (Chinese: v1 even edges v2). That's the next thing to harden.
+
+Next step depends on how much time we have: retrain the cross-encoder with robustness augmentation (random legal-form swaps, full-width digits, dropped suffixes) and 2× the data. ~3.5 h, and it improves both the LB and hidden-country safety.
