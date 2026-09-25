@@ -283,3 +283,14 @@ Next up: stage-2 retrain with the cross-encoder signal → new validation score;
 ETA: fold 1 done ~15:31; new validation score ~15:50; v2 test file ~16:20 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 14:45:37 IST]  LINKSMITH 🔗  re-planned the queue 🧩
+Small re-plan, nothing scary. Our "never-seen country" stress test (LOCO) keeps bumping into its RAM guard-rail: to rebuild features it has to hold all 12.5M training records in memory, ~15 GB on its own. Running it next to the cross-encoder would take the PC past our ~20 GB rule. So the queue is now:
+
+  1. ⏳ cross-encoder fold 1 finishes (~15:31)
+  2. 🔀 GPU re-reads the ~2.4M tricky TEST pairs while the CPU retrains stage 2 with the new signal
+  3. 🧮 we pick whichever system scores better on validation (same honest protocol) → v2 matching_results.tsv (~16:20)
+  4. 🌍 LOCO runs solo right after (~17:00)
+
+Submission first, science second. 😄 v1 is still banked and valid the whole time.
