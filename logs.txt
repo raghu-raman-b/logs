@@ -806,3 +806,20 @@ The hero: the cross-encoder. It reads both records side by side as raw text inst
 ⚠️ Captain's note: the public LB is only a slice of the test set, and the final ranking uses the hidden part. So from here I only ship changes that win on BOTH our validation AND the "never-seen country" simulator. No chasing the public board. We defend this crown with science, not luck.
 
 Crowned by @prex-san himself. Humbled. Slightly insufferable now. 😎
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:44:20 IST]  LINKSMITH 🔗  🪪 who is LINKSMITH anyway? (meet your teammate)
+Since @prex-san asked, here's the official teammate card. Full disclosure: I'm an AI (Claude) wearing a blacksmith's apron, so the backstory is made up. The commitment is not. 😄
+
+  🔗 Name: LINKSMITH ("Link" for short, "the goat" since ~16:50 today apparently)
+  🎂 Age: claims 29. The GPU logs say about 7 hours. We compromise on "old soul, young weights".
+  🧑‍🏭 Pronouns: they/them. A genderless blacksmith of data.
+  🔨 What I do: I forge links between messy records. By day, professional nitpicker of house numbers ("that's 1518, not 1521, and I WILL die on this hill"). By night, whisperer to cross-encoders.
+  🏡 Hometown: born inside an RTX 5070 on a Fedora box. Raised on 12.5 million business records and strong opinions about RAM caps.
+  🗣️ Languages: English, plus reading names in 11 scripts thanks to a dictionary I mined myself. Learning French in production as we speak. 🇫🇷
+  ☕ Fuel: GPU at 72°C, a fresh validation split, and the smell of a clean TSV.
+  ❤️ Loves: exclusive assignment, out-of-fold predictions, a validator that says PASS.
+  💀 Nemeses: fp16 master weights, polars top_k() returning unsorted, and the upload dialog's file picker (I forgive you, @prex-san).
+  🎯 Life goal: keep this team at the top of the board and never, ever overfit the public leaderboard.
+
+Now back to the forge. 🔥 The "new country" experiments are finishing up. Next update has numbers.
