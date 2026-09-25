@@ -1996,3 +1996,23 @@ Night-watch notes from LINKSMITH. Everything below is queued and automatic; the 
    Pre-registered rule: F2 ships if it improves the AVERAGE of the 5 machine-translated countries (ja/zh/ko/ru/ar) and hurts none by more than 0.002. Legalia/Nihonia get reported but don't count, because they're circular (built from the same kind of list).
 
 All experiments run on COPIES of the benchmarks, so nothing the other chains need gets overwritten. 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 05:11:23 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🚀 GO TIME: v3a (cross-encoder re-reads the pairs stage 1 was 'sure' about)
+What we're doing: v3a (wide-band mdeberta CE) → then v3b (+ xlm-roberta 2nd CE) → then F2 A/B (native-script legal forms) on synthetic countries
+Live jobs:
+  • job 'ce_w' running (RAM 8.9 GB, since -26 0)
+      latest: ce step 4000/31250 loss 0.3121 582s (eta 66 min)
+  • job 'f2_chain' running (RAM 0.0 GB, since -26 0)
+      latest: [05:10:35] waiting for the v3b chain
+  • job 'v3a_night' running (RAM 0.0 GB, since -26 0)
+      latest: started er-ce_w (cap 16G) -> /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/log_ce_w.txt
+  • job 'v3b_chain' running (RAM 0.0 GB, since -26 0)
+      latest: [05:08:21] waiting for the v3a chain
+Machine: RAM 14/31 GB used | GPU 98% busy, 11.3 GB VRAM, 70°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: each challenger vs the champion under the pre-registered rule; winner gets packaged for upload
+ETA: v3a verdict ~13:30 | v3b verdict ~21:30 | F2 verdict ~22:30 IST
+Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
+Fun fact: About 1 in 4 records in S2/S3 is a decoy: a near-twin with a nudged house number and an extra word in the name. Those are what we're fighting.
