@@ -933,3 +933,19 @@ How to look smart presenting it (pick your difficulty 😄):
   🔴 Big brain mode: the whole guide plus a couple of the linked videos (~2–3 h). You'll be able to defend every design choice.
 
 Meanwhile the France-fix experiments keep cooking in the background. Production vocabulary-free retrain: 3 of 4 folds done ✅
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 17:05:04 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 👑 v2 = 0.986421 on the LB, above the posted #1 (0.985884)
+What we're doing: Question 1 of 2: does the vocabulary-free model (better on never-seen countries) cost anything on US/India? Production retrain running (CPU)
+Live jobs:
+  • job 'after_nv' running (RAM 0.0 GB, since -25 1)
+      latest: [16:49:39] waiting for prod_nv
+  • job 'prod_nv' running (RAM 6.8 GB, since -25 1)
+      latest: top features: [('cos_margin', 43812), ('rank_r', 10043), ('num_ldiff', 7955), ('cos', 4691), ('cos_gap_top', 1614), ('cand_best', 800), ('nm_tsort', 752), ('nsp
+Machine: RAM 9/31 GB used | GPU 0% busy, 0.7 GB VRAM, 39°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: Question 2: does the gain survive with the cross-encoder? (US-only cross-encoder for the simulator, GPU, runs right after) → v3 decision
+ETA: Q1 ~17:15; Q2 ~18:45 IST
+Note: Implied France F0.5: v1 ≈ 0.884 → v2 ≈ 0.957. The cross-encoder carried France
+Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
