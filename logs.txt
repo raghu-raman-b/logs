@@ -766,3 +766,17 @@ Next up: v3 = cross-encoder + best France fix → upload
 ETA: France-fix verdict ~16:55; v3 ~17:30 IST
 Note: LB: #1 0.985884 | #2 0.984644 | #3 0.98435 | top-10 cut 0.981351. We need France ≥ ~0.923 (now ~0.884)
 Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:39:45 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🔒 LOCK-IN MODE: fixing France
+What we're doing: Testing France fixes on our leave-one-country-out simulator (train US only, score India cold): (1) vocabulary-free features, (2) conservative operating point for never-seen countries
+Live jobs:
+  • job 'loco_nv' running (RAM 10.7 GB, since -25 1)
+      latest: top features: [('cos_margin', 24749), ('rank_r', 8585), ('num_ldiff', 4833), ('cos', 2405), ('num_lev', 584), ('nm_tsort', 530), ('cand_best', 396), ('nsp_cont2
+Machine: RAM 14/31 GB used | GPU 0% busy, 0.7 GB VRAM, 41°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: v3 = cross-encoder + best France fix → upload
+ETA: France-fix verdict ~16:55; v3 ~17:30 IST
+Note: LB: #1 0.985884 | #2 0.984644 | #3 0.98435 | top-10 cut 0.981351. We need France ≥ ~0.923 (now ~0.884)
+Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
