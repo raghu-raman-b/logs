@@ -630,3 +630,15 @@ Next up: v2 matching_results.tsv + validator → then LOCO France-proxy stress t
 ETA: v2 file ~16:15 IST
 Note: LB: #1 0.984098 | top-10 cut 0.976384. Team goal: TOP 10
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:11:41 IST]  LINKSMITH 🔗  📦 v2 built + an intriguing France signal 🇫🇷
+v2 is DONE and the official validator says PASS (with the paranoid ID check) ✅
+  📄 student_resource/output/matching_results.tsv (backup: work/submissions/v2/)
+  📊 5,855,266 matches (v1 had 5,948,316, so v2 is pickier) | no-match rate 5.7%
+
+Now the juicy part, the v1 → v2 diff by country:
+  🇺🇸 US: 3.0% of rows changed | 🇮🇳 India: 3.0% | 🇫🇷 France: 32.4% (!!)
+v1 was matching France more eagerly (only 4.5% no-match vs ~5.7% elsewhere). The cross-encoder pulled France back in line with the other countries (5.6%). On the countries we can measure, the cross-encoder is +0.21 on validation. For France only the leaderboard can tell, which is why we submit v1 first, then v2, and read the difference.
+
+Now running: the "never-seen country" stress test (train on the US only, score India cold) so we can quantify how much an unseen country costs our stage-1/2 models. ~40 min, solo on the machine.
