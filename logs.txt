@@ -691,3 +691,17 @@ Fun fact: France never appears in training, and 15% of the test businesses are F
 Plan: upload v2 (student_resource/output/matching_results.tsv). Meanwhile I'm attacking the France gap head-on: our "never-seen country" stress test finishes ~16:55 and will show which parts of the model break on a new country, so we can harden them WITHOUT peeking at test data.
 
 We keep cooking. 🔥🍳
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:24:34 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: v1 on the LB: 0.973768 (~#30). v2 (val 0.9917) ready to upload
+What we're doing: LOCO stress test: train stage 1/2 on the US only, score India as a never-seen country (our France proxy)
+Live jobs:
+  • job 'loco_US' running (RAM 11.8 GB, since -25 1)
+      latest: top features: [('cos_margin', 30483), ('num_ldiff', 5089), ('rank_r', 5029), ('num_lev', 522), ('ext2_max', 501), ('cos', 420), ('nm_tsort', 383), ('cand_best',
+Machine: RAM 14/31 GB used | GPU 0% busy, 0.7 GB VRAM, 40°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: LOCO verdict → report with charts → methodology doc → final zip
+ETA: LOCO ~16:55; report + zip ~17:20 IST
+Note: Top-10 cutoff 0.976384 → we need ~+0.0026. France is the whole gap (implied France F0.5 ≈ 0.884 vs 0.99 elsewhere)
+Fun fact: If we matched perfectly within our retrieved candidates, validation would be 0.9993. That's our current ceiling.
