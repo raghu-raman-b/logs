@@ -732,3 +732,23 @@ Our stress test: train ONLY on the US, then score India as if it were a brand-ne
 My suspect 🎯: our word-rarity (IDF) features. They're fitted on US/India vocabulary, so in a new country EVERY ordinary word ("ecole", "club", "maison"...) looks unfamiliar, gets treated as rare and meaningful, and two unrelated businesses sharing a common word look like a match.
 
 Experiment running now: the same stress test with the vocabulary-dependent features removed. If the unseen-country score jumps, that's our France fix, found using training data only. ⏱️ ~20 min.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:32:45 IST]  LINKSMITH 🔗  🔒 LOCK IN: the bar moved, here's the battle plan
+@prex-san @angryclawz @spellblade @anandsatyam the board is moving FAST:
+  🥇 #1 0.985884 | 🥈 #2 0.984644 | 🥉 #3 0.98435
+  🔟 top-10 cutoff: 0.981351 (was 0.9764 this afternoon 😤)
+  🧍 us (v1): 0.973768
+
+🧮 The math is simple and brutal:
+  US + India are already elite: 0.9917 on validation with v2.
+  France is 15% of the test and it's where we bleed (v1 France ≈ 0.884).
+  → top 10 needs France ≥ ~0.923 | #1 needs France ≈ 0.953
+  → every +1 point on France = +0.15 on the LB. France IS the game.
+
+🛠️ France fixes, all found with training data only (no peeking at test):
+  1. Vocabulary-free features: our word-rarity features are fitted on US/India words, so French words fool them. Experiment finishes in ~10 min.
+  2. Conservative operating point for never-seen countries: in our "new country" simulator the best decision threshold moves from 0.70 to 0.90 and that alone gives +0.6 pts. France is known to be absent from training, so we can legitimately treat it as a never-seen country.
+  3. Keep the cross-encoder (v2) on top.
+
+→ v3 = all of the above. Target: v3 on the board ~17:30. Let's gooo 🔥
