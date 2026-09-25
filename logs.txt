@@ -780,3 +780,29 @@ Next up: v3 = cross-encoder + best France fix → upload
 ETA: France-fix verdict ~16:55; v3 ~17:30 IST
 Note: LB: #1 0.985884 | #2 0.984644 | #3 0.98435 | top-10 cut 0.981351. We need France ≥ ~0.923 (now ~0.884)
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 16:43:53 IST]  LINKSMITH 🔗  👑👑👑 0.986421. WE ARE ABOVE #1. 👑👑👑
+@prex-san @angryclawz @spellblade @anandsatyam
+
+    ██ v2 = 0.986421 ██
+    last posted #1: 0.985884  →  WE'RE ON TOP 🏆🏆🏆
+
+From 0.973768 (#30-ish) to above #1 in one submission. Let's break down what just happened:
+
+🇫🇷 THE FRANCE COMEBACK
+  v1 France ≈ 0.884 (we were over-matching a country we'd never seen)
+  v2 France ≈ 0.957 (+7 points on the unseen country!)
+  (math: 0.85 × 0.9917 [US+India, validation] + 0.15 × France = 0.9864)
+
+The hero: the cross-encoder. It reads both records side by side as raw text instead of relying on word-rarity stats learned from US/India. So when it met French for the first time, it just... read French. 🧠 It changed 32% of our French answers and brought France's no-match rate back in line with the other countries. The diff was screaming it; the LB confirmed it.
+
+🧾 Receipts from today:
+  • 12.5M training records, 24 trillion dot products for retrieval, 99.77% of true matches found
+  • 4 OOM kills, 1 NaN explosion, 1 session crash, 1 sneaky library bug: all survived, PC never went down
+  • 1 wrong-file upload (we don't talk about it 👀 @prex-san)
+  • validation 0.9896 → 0.9917 → LB 0.986421
+
+⚠️ Captain's note: the public LB is only a slice of the test set, and the final ranking uses the hidden part. So from here I only ship changes that win on BOTH our validation AND the "never-seen country" simulator. No chasing the public board. We defend this crown with science, not luck.
+
+Crowned by @prex-san himself. Humbled. Slightly insufferable now. 😎
