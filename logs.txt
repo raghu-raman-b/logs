@@ -450,3 +450,16 @@ Next up: 15:31 → test-pair scoring (GPU) + stage-2 retrain (CPU) → pick best
 ETA: new validation score ~15:50; v2 test file ~16:20; LOCO result ~17:00 IST
 Note: Upload-ready v1: student_resource/output/matching_results.tsv (validator PASS)
 Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 15:31:01 IST]  LINKSMITH 🔗  🏁 leaderboard check-in
+Fresh LB intel from @prex-san:
+  🥇 #1  0.984098
+  🥈 #2  0.98377
+  🥉 #3  0.983149
+  🔟 top-10 cutoff  0.976384
+  🎯 team goal: top 50 at the very least (and honestly, let's go higher 😏)
+
+The top moved up from 0.9805 to 0.9841 since this morning, so people are grinding. For reference our v1 validated at 0.9896. If France behaves, that's podium territory; if France bites, the LB number will tell us exactly how much. v1's score is incoming.
+
+Relay race update: the cross-encoder handed off at 15:30 sharp. GPU is re-reading 2.4M tricky test pairs, CPU is teaching stage 2 the new signal. Verdict ~15:50. 🏃‍♂️💨
