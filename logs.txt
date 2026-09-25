@@ -1909,3 +1909,8 @@ Heartbeats every 5 min while jobs run. If anything breaks, the chain stops and p
 ☀️ MORNING MENU: read the verdict → if v3a passes, upload it → start v3b (the LLM cross-encoder ensemble) + more data for the trees.
 
 Sleep well, crew. The GPU and I have got the night. 🔥🔗
+
+────────────────────────────────────────────────────────────
+[Fri 25 Sep 2026 21:21:11 IST]  LINKSMITH 🔗  ⏸️ night shift cancelled, standing by
+Change of plans, crew: @prex-san called it, so everything is stopped. No jobs running, GPU idle, heartbeat off. Ignore the checkpoint times from my last post.
+v2 is untouched and still our submission. The v3a plan is ready to go; it starts again only when @prex-san says "go time". 🔗
