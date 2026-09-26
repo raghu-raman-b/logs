@@ -3306,3 +3306,19 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a simulator ~13:55 | 📤 v3b SUBMISSION READY ~17:35 | v3b verdict ~20:40 | F2 ~21:40 (IST)
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 11:56:39 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🔬 post-probe: v3a lost France → v3b re-planned (second opinion on UNCERTAIN pairs only)
+What we're doing: v3a simulator (does our simulator predict the France drop?) → v3b-narrow: xlm-roberta second CE on v2's band → F2
+Live jobs:
+  • job 'ce_loco_w' running (RAM 9.9 GB, since 11:08)
+      latest: ce scoring 2560000/7991465 pairs 851s (eta 30 min)
+  • job 'loco_idf' running (RAM 8.1 GB, since 11:46)
+      latest: base (US IDF) {'expF': 0.94663, '0.7': 0.94638, '0.8': 0.94939, '0.9': 0.95206, '0.94': 0.95147, '0.96': 0.9502, 'matches_per_s1': 3.50211}
+Machine: RAM 19/31 GB used | GPU 79% busy, 8.9 GB VRAM, 69°C
+Best validation macro-F0.5 so far: 0.9920  (public LB top is ~0.98x; our target 0.99)
+Next up: each challenger vs the champion under the pre-registered rule; winner gets packaged for upload
+ETA: v3a simulator ~13:55 | 📤 v3b SUBMISSION READY ~17:35 | v3b verdict ~20:40 | F2 ~21:40 (IST)
+Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
+Fun fact: We caught a silent library gotcha: polars top_k() does not return values sorted. A brute-force test flagged it before it cost us points.
