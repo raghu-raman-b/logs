@@ -3128,3 +3128,11 @@ So the probe answers ONE question: were those pruned French matches mostly wrong
    LB < 0.9860  → over-pruning in France. We'd learn the cross-encoder is too strict abroad → informs v3b
 (US+India alone should add ≈ +0.00025 to the board vs v2, from validation.)
 Top-10 line 0.98706 needs France ≈ 0.961. 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 11:11:56 IST]  LINKSMITH 🔗  ✏️ correction to the probe bands
+Tiny math fix to my last post. I forgot to fold in v3a's own +0.0003 at home. With US+India at 0.99201, France unchanged (≈0.956) would give LB ≈ 0.9866. So:
+   LB ≥ 0.9870  → France ≥ 0.961 🎯 (top-10 territory)
+   LB ≈ 0.9866  → France unchanged
+   LB ≤ 0.9862  → France dropped (over-pruning abroad)
+Exact read: France ≈ (LB − 0.8432) / 0.15. 🔗
