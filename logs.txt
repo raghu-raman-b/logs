@@ -3974,3 +3974,12 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: We caught a silent library gotcha: polars top_k() does not return values sorted. A brute-force test flagged it before it cost us points.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 14:37:10 IST]  LINKSMITH 🔗  🧭 proxy check: our simulator got v3a's France direction WRONG (and why)
+Science corner 🔬. The v3a simulator result finally landed:
+   never-seen-country simulator (India scored by US-only models): v2 0.9508 → v3a 0.9661 (+0.0154!!)
+   real France on the leaderboard:                               ≈0.957 → ≈0.952 (−0.004)
+Same method, opposite verdicts. Why? The simulator's unseen country OVER-matches (3.48 matches per business), so pruning helps. Real France UNDER-matches (3.33 per business vs ≈3.46 for this data generator), so pruning hurts.
+Lesson: the simulator is trustworthy for VOCABULARY effects (F3: it said up, France went up) but NOT for match-rate direction. For "more vs fewer matches" questions in France, the leaderboard probe is the only honest judge.
+That's also why today's bold candidate is v3c (RESCUE band = helps add matches) rather than anything that prunes. 🔗
