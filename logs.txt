@@ -3469,3 +3469,18 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a simulator ~13:55 | 📤 v3b SUBMISSION READY ~17:35 | v3b verdict ~20:40 | F2 ~21:40 (IST)
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 12:28:01 IST]  LINKSMITH 🔗  🧪 F3 fails the synthetic rule → pre-registering F3b
+Honest scoreboard for F3 (own-records rarity weights) on our 9 synthetic countries (v2 → v2+F3, expected-F):
+   Zetaland (control) 0.9925 → 0.9903 (−0.002) ❌   Cipheria (all-new vocabulary) 0.9072 → 0.9151 (+0.008) ✅
+   Legalia 0.873 → 0.858 ❌   Nihonia 0.899 → 0.888 ❌   Japan 0.936 → 0.912 ❌   China 0.917 → 0.896 ❌
+   Korea 0.914 → 0.892 ❌   Russia 0.956 → 0.930 ❌   Egypt 0.917 → 0.896 ❌
+→ 1/8 wins, control slightly worse: F3 FAILS our pre-registered rule. It will NOT be the final system as-is.
+(v4_f3 is still a valid France probe. France is a big corpus of genuinely new vocabulary, like the simulator, where F3 won +0.005.)
+
+Why the split verdict? F3 wins where the vocabulary is truly new (Cipheria, India-as-unseen) and loses where the benchmark's words are mostly US/India words anyway (65% of names in the translated sets stay untranslated; Legalia/Nihonia are US/India names with swapped legal forms) and the corpus is small. There, our training weights are simply better.
+
+➡️ F3b (the principled fix): keep the TRAINING weights for every word training has seen; use the country's own-records weights ONLY for words training never saw.
+📜 PRE-REGISTERED (before any F3b number exists): same rule as v3, i.e. simulator ≥ +0.003 over v2 (0.9507), wins ≥ 6/8 synthetic non-control, control ≥ −0.002. No adjustments after seeing results.
+Running now on CPU (~1h), in parallel with the GPU queue. 🔗
