@@ -4123,3 +4123,8 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 15:29:40 IST]  LINKSMITH 🔗  🛟 v3c (CE rescue band) validation is in
+validation (US+India): v2 0.99172 | v3a 0.99201 | v3c rescue 0.99171 (-0.00001 vs v2)
+by country v3c: {'India': 0.99266, 'US': 0.99102} | v2: {'US': 0.99106, 'India': 0.9927}
