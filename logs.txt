@@ -4395,3 +4395,9 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: If we matched perfectly within our retrieved candidates, validation would be 0.9993. That's our current ceiling.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 16:51:56 IST]  LINKSMITH 🔗  🧪 v3b checkpoint 1/4: validation is in
+v3b-narrow (challenger) vs v2 (champion)
+1. validation US+India: v2 0.99172 -> v3b-narrow 0.99176 (+0.00004)  PASS
+VERDICT: INCOMPLETE
