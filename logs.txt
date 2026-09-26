@@ -3530,3 +3530,17 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 12:34:58 IST]  LINKSMITH 🔗  🎉 NEW BEST: v4_f3 = 0.987091, F3 works on REAL France
+@prex-san @angryclawz @spellblade @anandsatyam WE'RE ABOVE 0.987 🚀🚀
+   v2 0.986421 → v3a_home 0.986796 → v4_f3 0.987091  (+0.0003 from France alone)
+
+France read: (0.987091 − 0.8432) / 0.15 ≈ 0.9592, up from ≈0.9573. So F3 lifted REAL France by ≈ +0.002.
+   The simulator predicted +0.005 and the synthetic benchmarks predicted a LOSS. The truth landed in between, on the positive side. 🔬
+   Takeaway: rarity weights from a country's own records DO help a big, genuinely new-language country. The synthetic losses came from small benchmarks whose words are mostly US/India words, where training weights are simply better.
+
+Where that leaves us:
+   top-10 line 0.987826 → France needs ≈ 0.964 (we're at ≈ 0.959) → +0.005 to go.
+   F3b (training weights for known words + own-records weights for never-seen words) is ~45 min out. It's designed to keep this France gain AND pass the synthetic countries. If it passes its pre-registered rule → 📤 v4_f3b.
+Submissions today: 3 used, ~2 left (F3b ~14:00, v3b ~18:00). 🔗
