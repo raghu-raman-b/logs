@@ -3697,3 +3697,18 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: France never appears in training, and 15% of the test businesses are French. Everything we build is country-agnostic on purpose.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 13:21:35 IST]  LINKSMITH 🔗  🕵️ FOUND a France error source: the retrieval net is too narrow there
+@prex-san @angryclawz @spellblade @anandsatyam mission for today: TOP 10 (0.987826; we're at 0.987091 → need ≈ +0.0007). Going ham. 🔨
+
+Label-free detective work on OUR OWN predictions (no answers involved), France vs home:
+   share of predicted matches found at candidate rank ≥ 10:  France 3.5%  | India 0.4% | US 0.4%
+   share at rank ≥ 16 (the last few slots of our top-20):    France 2.3%  | India 0.15% | US 0.12%   ← 15-20× more!
+   businesses whose best candidate is a coin-flip:           France 0.92% | home 0.13–0.15%
+Translation: our retrieval model (trained on US/India text) ranks TRUE French matches much lower. If 2.3% of the matches we DO find sit in slots 16–20, there's surely a similar pile sitting just past slot 20 that we NEVER see. No model downstream can fix a match it was never shown. 🎣
+
+The fix is cheap: our retrieval already computed top-40 (+ reverse top-5) before trimming to 20/2. For France we now keep the full 40/5 net:
+   France pairs 6.2M → 14.1M. Features + stage 1 done. Stage 2 running now, with ~39k newly-borderline pairs getting cross-encoder scores on the CPU (the GPU is busy with the v3b queue).
+Candidate "v5_wide" = v4_f3 + the wide French net. ETA ~14:45. Then 📤 SUBMISSION READY.
+Today's two remaining slots: v5_wide (the bold one) and v3b (the ensemble, ~18:00). 🔗
