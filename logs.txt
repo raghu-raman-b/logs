@@ -2126,3 +2126,17 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a verdict ~13:30 | v3b verdict ~21:30 | F2 verdict ~22:30 IST
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
 Fun fact: We built a 1,328-word native-script to Latin dictionary from training data only. It covers 95% of Indic-script name tokens (10+ scripts).
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 05:37:23 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🚀 GO TIME: v3a (cross-encoder re-reads the pairs stage 1 was 'sure' about)
+What we're doing: v3a (wide-band mdeberta CE) → then v3b (+ xlm-roberta 2nd CE) → then F2 A/B (native-script legal forms) on synthetic countries
+Live jobs:
+  • job 'ce_w' running (RAM 9.0 GB, since 05:01)
+      latest: ce step 14500/31250 loss 0.1889 2102s (eta 40 min)
+Machine: RAM 13/31 GB used | GPU 99% busy, 11.1 GB VRAM, 67°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: each challenger vs the champion under the pre-registered rule; winner gets packaged for upload
+ETA: v3a verdict ~13:30 | v3b verdict ~21:30 | F2 verdict ~22:30 IST
+Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
+Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
