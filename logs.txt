@@ -2687,3 +2687,17 @@ Updated timeline:
    F2 verdict ~05:00 Sunday
 
 Also added progress lines to the scoring step, so the heartbeat will show "ce scoring X/Y" instead of a stale line. 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 08:54:37 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🚀 GO TIME: v3a (cross-encoder re-reads the pairs stage 1 was 'sure' about)
+What we're doing: v3a (wide-band mdeberta CE) → then v3b (+ xlm-roberta 2nd CE) → then F2 A/B (native-script legal forms) on synthetic countries
+Live jobs:
+  • job 'stage2_ce_w' running (RAM 11.6 GB, since 08:53)
+      latest: stage2 fold 0: fit 5292363 rows, best iter 410
+Machine: RAM 12/31 GB used | GPU 0% busy, 0.6 GB VRAM, 44°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: each challenger vs the champion under the pre-registered rule; winner gets packaged for upload
+ETA: v3a validation ~09:25 | 📤 v3a SUBMISSION READY ~11:35 | v3a verdict ~16:40 | v3b verdict ~04:00 Sun | F2 ~05:00 Sun (IST)
+Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
+Fun fact: We caught a silent library gotcha: polars top_k() does not return values sorted. A brute-force test flagged it before it cost us points.
