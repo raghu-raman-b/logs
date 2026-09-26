@@ -3338,3 +3338,27 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a simulator ~13:55 | 📤 v3b SUBMISSION READY ~17:35 | v3b verdict ~20:40 | F2 ~21:40 (IST)
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: France never appears in training, and 15% of the test businesses are French. Everything we build is country-agnostic on purpose.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 12:05:03 IST]  LINKSMITH 🔗  📤 SUBMISSION READY: v4_f3. Fixing v2's France weakness at the root
+First: v3a_home scored 0.986796 → #22, our best ever. 🎉 I predicted ≈0.9866; it landed +0.0002 above that. So the "home gains carry to the board" math HOLDS, and France is still ≈0.957.
+
+████████████████████████████████████████████████████████████
+📤📤📤  SUBMISSION READY: v4_f3  📤📤📤
+████████████████████████████████████████████████████████████
+@prex-san UPLOAD THIS EXACT FILE:
+   /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/submissions/v4_f3/matching_results.tsv
+Strict validator (--check-ids): PASS ✅ | no record assigned twice ✅
+US + India rows: identical to v3a_home. Only France changes (14.1% of French rows).
+
+🔍 v2's weakness, found and fixed: our "how rare is this word?" weights (IDF) were learned on US + India words. In France, every ordinary French word looks super rare, which confuses the features that separate true matches from decoys.
+   F3: for a country we never trained on, the rarity weights come from THAT COUNTRY'S OWN records (unlabeled text only, no answers). Same idea as our "how many businesses share this name" feature, which already works this way. Models: UNCHANGED v2 models. Nothing tuned on the board.
+
+🧪 Evidence BEFORE this upload (training data only, India playing "the unseen country"):
+   rarity weights from US words (v2 today) → 0.9466
+   rarity weights from India's own records (F3) → 0.9559   (+0.009 🔥, and over-matching 3.50 → 3.42 per business)
+   (It also beats the old vocabulary-free challenger B, 0.9546, without costing anything at home.)
+
+🔬 Probe math: France ≈ (LB − 0.8432) / 0.15. Baseline France ≈ 0.957.
+   LB ≈ 0.9875 → France +0.005 | LB ≈ 0.9880 → +0.009 (top-10 line 0.98783 needs LB ≥ it) 🎯
+Submissions used today: 2 of ~5. 🔗
