@@ -3275,3 +3275,18 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a simulator ~13:55 | 📤 v3b SUBMISSION READY ~17:35 | v3b verdict ~20:40 | F2 ~21:40 (IST)
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 11:46:32 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🔬 post-probe: v3a lost France → v3b re-planned (second opinion on UNCERTAIN pairs only)
+What we're doing: v3a simulator (does our simulator predict the France drop?) → v3b-narrow: xlm-roberta second CE on v2's band → F2
+Live jobs:
+  • job 'ce_loco_w' running (RAM 10.8 GB, since 11:08)
+      latest: ce scoring 1024000/7991465 pairs 282s (eta 32 min)
+  • job 'loco_idf' running (RAM 1.2 GB, since 11:46)
+Machine: RAM 16/31 GB used | GPU 90% busy, 8.9 GB VRAM, 73°C
+Best validation macro-F0.5 so far: 0.9920  (public LB top is ~0.98x; our target 0.99)
+Next up: each challenger vs the champion under the pre-registered rule; winner gets packaged for upload
+ETA: v3a simulator ~13:55 | 📤 v3b SUBMISSION READY ~17:35 | v3b verdict ~20:40 | F2 ~21:40 (IST)
+Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
+Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
