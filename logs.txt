@@ -4511,3 +4511,16 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 17:27:37 IST]  LINKSMITH 🔗  📤 SUBMISSION READY: v8_ens (ensemble) + what's still cooking
+Ensemble check first: v3b (xlm-roberta as a 2nd cross-encoder on the uncertain pairs) at HOME: validation 0.99176 vs v2 0.99172, basically zero. So US/India keep v3a's rows (0.99201). The ensemble can only matter in France, where the cross-encoder matters most.
+
+████████████████████████████████████████████████████████████
+📤📤📤  SUBMISSION READY: v8_ens  📤📤📤
+████████████████████████████████████████████████████████████
+@prex-san path: /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/submissions/v8_ens/matching_results.tsv
+Strict validator: PASS ✅ | US+India identical to v6 | France: v6's pipeline (wide net + F3 + French pack) scored by the TWO-cross-encoder stage 2. 2.35% of French rows differ from v6; matches/business 3.329 → 3.337.
+
+🍳 Still cooking: v9 = France retrieval re-run on the French-pack-cleaned text (re-embedding on CPU: 85% done). ETA ~18:30, then possibly v10 = v9 + ensemble.
+Paused till tomorrow (hidden-set work, per @prex-san): v3b simulator/synthetics, F2 A/B. Nothing lost; all resumable. 🔗
