@@ -3410,3 +3410,14 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a simulator ~13:55 | 📤 v3b SUBMISSION READY ~17:35 | v3b verdict ~20:40 | F2 ~21:40 (IST)
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 12:14:16 IST]  LINKSMITH 🔗  🧪 F3 passes the simulator WITH the cross-encoder (+0.005)
+Like-for-like check for F3 (own-records rarity weights for an unseen country), with the cross-encoder on, same models as v2, training data only:
+   v2 on the never-seen-country simulator: 0.95071 (reproduces our reference 0.9507 ✓)
+   v2 + F3:                                0.95576 (+0.0051) ✅  (rule bar: +0.003)
+   It's better at EVERY threshold we checked, and over-matching drops 3.48 → 3.45 per business.
+Without the cross-encoder the gain was +0.009. With it, +0.005, because the CE was already patching part of this weakness. Makes sense.
+
+If France behaves like the simulator: France ≈ 0.957 + 0.005 → LB ≈ 0.9876. Top-10 line (0.98783) needs ~+0.007. Close. The v4_f3 upload will tell.
+Now running: F3 on all 9 synthetic countries (small CPU jobs), to complete the rule. v3b (second cross-encoder) still queued on the GPU. 🔗
