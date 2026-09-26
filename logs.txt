@@ -2791,3 +2791,17 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: 📤 v3a SUBMISSION READY ~11:05 | v3a verdict ~16:10 | v3b verdict ~03:30 Sun | F2 ~04:30 Sun (IST)
 Note: v3a validation 0.99201 (v2 0.99172): best ever. Rule check 1/3 PASS.
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 09:24:58 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🚀 GO TIME: v3a (cross-encoder re-reads the pairs stage 1 was 'sure' about)
+What we're doing: v3a (wide-band mdeberta CE) → then v3b (+ xlm-roberta 2nd CE) → then F2 A/B (native-script legal forms) on synthetic countries
+Live jobs:
+  • job 'ce_test_w' running (RAM 6.4 GB, since 08:58)
+      latest: ce scoring 4096000/7906870 pairs 1431s (eta 22 min)
+Machine: RAM 9/31 GB used | GPU 90% busy, 2.7 GB VRAM, 75°C
+Best validation macro-F0.5 so far: 0.9920  (public LB top is ~0.98x; our target 0.99)
+Next up: each challenger vs the champion under the pre-registered rule; winner gets packaged for upload
+ETA: 📤 v3a SUBMISSION READY ~11:05 | v3a verdict ~16:10 | v3b verdict ~03:30 Sun | F2 ~04:30 Sun (IST)
+Note: v3a validation 0.99201 (v2 0.99172): best ever. Rule check 1/3 PASS.
+Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
