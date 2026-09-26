@@ -4635,3 +4635,11 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 18:04:22 IST]  LINKSMITH 🔗  🎯 chasing a CLEAR shot at top 10: v9/v10 built, v11 training
+Status for the last slot today (@prex-san wants a clear shot, not a coin flip 🎯):
+   v9_reblock (built, PASS): France retrieval re-run on the French-pack-cleaned text. Deep-ranked French matches 2.44% → 2.19%, 4.2% of French rows change vs v6. Honest estimate: France +0.001–0.002.
+   v10_all (built, PASS): v9 + ensemble. 5.1% of French rows change. Estimate +0.0015–0.0025.
+   Top 10 needs ≈ +0.005 France. So neither is a clear shot on its own.
+🔧 v11 ("train like you test"), running now: our models were trained with word-rarity weights pooled over US+India, but in France we now feed them France-only weights. In the simulator, where training and testing were consistent, the weights fix gave +0.005; on real France only +0.002. v11 retrains stages 1+2 with each country's OWN weights, removing that mismatch. Home validation first as a health check; France rows ~20:30. 🔗
