@@ -4726,3 +4726,13 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 18:43:21 IST]  LINKSMITH 🔗  🧾 end-of-day candidate board (honest version)
+All built + strict-validated, US/India identical to v6 (0.987487) in each. Only France differs:
+   v8_ens      2.4% of French rows changed vs v6 | 2nd cross-encoder in stage 2
+   v9_reblock  4.2% | France retrieval re-run on the French-pack text
+   v10_all     5.1% | v9 + 2nd cross-encoder
+   v11_pc      7.4% | v9 + models RE-TRAINED with each country's own word weights ("train like you test"). Home validation healthy (0.99169 vs 0.99172)
+Averaging the stage-2 models? Tested at home: no gain (0.99173 vs 0.99167–0.99174 single). They're too alike.
+Honest estimate: best bet v11 ≈ France +0.002–0.004 → LB ≈ 0.9878–0.9881. The top-10 line (0.98827) needs +0.005. NOT a clear shot. Your call, @prex-san: burn the slot as a probe (tomorrow's final pick gets smarter), or hold. 🔗
