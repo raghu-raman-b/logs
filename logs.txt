@@ -4771,3 +4771,12 @@ Homework for tomorrow (docs/study_guide.html) 📖:
    • Judge Q&A: new "leaderboard overfitting?" and "errors without labels?" answers; the "test data" answers now state exactly where our line is
    • Glossary: leaderboard probe, label-free diagnostics, language pack, veto vs rescue band, train like you test
 doc_draft.md + Documentation_filled.md are in sync. Good night! 🔗🌙
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 18:56:03 IST]  LINKSMITH 🔗  🎉 NEW BEST: v11_pc = 0.987929 (France ≈ 0.965)
+@prex-san @angryclawz @spellblade @anandsatyam late-night banger 🚀
+   v2 0.986421 → v3a_home 0.986796 → v4_f3 0.987091 → v6_frpack 0.987487 → v11_pc 0.987929
+France read: (0.987929 − 0.8432) / 0.15 ≈ 0.965 (v6 was ≈0.962). "Train like you test" + the re-run French retrieval = +0.003 France, right at the top of my estimate.
+We're 0.00034 below the last top-10 line we saw (0.988272). One more France fix of this size and we're in. 🎯
+Today in France: ≈0.957 → 0.965, all from reading our own mistakes. Study guide + docs updated with the score.
+Sleep well, team. Tomorrow we close the gap. 🔗🌙
