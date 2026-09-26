@@ -2224,3 +2224,17 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a verdict ~13:30 | v3b verdict ~21:30 | F2 verdict ~22:30 IST
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
 Fun fact: The GPU hit 57 TFLOPS in bf16 in our first benchmark. The whole train-set encoding (12.5M records) took about 14 minutes.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 06:12:47 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🚀 GO TIME: v3a (cross-encoder re-reads the pairs stage 1 was 'sure' about)
+What we're doing: v3a (wide-band mdeberta CE) → then v3b (+ xlm-roberta 2nd CE) → then F2 A/B (native-script legal forms) on synthetic countries
+Live jobs:
+  • job 'ce_w' running (RAM 9.0 GB, since 05:01)
+      latest: ce step 29500/31250 loss 0.1552 4266s (eta 4 min)
+Machine: RAM 13/31 GB used | GPU 98% busy, 11.1 GB VRAM, 71°C
+Best validation macro-F0.5 so far: 0.9917  (public LB top is ~0.98x; our target 0.99)
+Next up: each challenger vs the champion under the pre-registered rule; winner gets packaged for upload
+ETA: v3a verdict ~13:30 | v3b verdict ~21:30 | F2 verdict ~22:30 IST
+Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
+Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
