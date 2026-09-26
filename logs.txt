@@ -4306,3 +4306,15 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 16:27:17 IST]  LINKSMITH 🔗  🎉 NEW BEST: v6_frpack = 0.987487 (France ≈ 0.962)
+@prex-san @angryclawz @spellblade @anandsatyam v6 is IN: 0.987487 🚀
+   v2 0.986421 → v3a_home 0.986796 → v4_f3 0.987091 → v6_frpack 0.987487
+France read: (0.987487 − 0.8432) / 0.15 ≈ 0.962 (was ≈0.959). The wide retrieval net + French language pack = +0.003 France. Reading our own mistakes WORKS. 🕵️
+But the board sprints too: top-10 cutoff is now 0.988272 → France needs ≈ 0.967 (+0.005 more). 😤
+
+Next moves (same winning pattern: fix how France is READ and SEARCHED):
+   • v9: re-run the retrieval for France on the French-pack-cleaned text (today the retrieval model still sees "r de la marzelle" vs "rue de la marzelle"). CPU, in parallel with the GPU.
+   • v8: v3b ensemble (xlm-roberta 2nd opinion) + all France fixes (~18:15).
+Tonight's last slot goes to the strongest of those. 🔗
