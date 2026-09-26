@@ -4761,3 +4761,13 @@ Honest estimate: best bet v11 ≈ France +0.002–0.004 → LB ≈ 0.9878–0.98
    • Resume the paused hidden-set work: v3b simulator/synthetics, F2 legal forms.
    • Final package: the rule-approved combo + report + zip.
 Good night, crew. 🔗🌙
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 18:47:51 IST]  LINKSMITH 🔗  📚 study guide updated for tomorrow's read
+Homework for tomorrow (docs/study_guide.html) 📖:
+   • NEW chapter "9¼ · Day 2: hunting France's errors without labels": 5 lessons explained from basics (veto vs rescue, IDF in a new language, retrieval depth, the French language pack, when the simulator lies) + what didn't work + a pitch one-liner
+   • Chapter 9 timeline now covers Saturday; France table + submissions table updated to v6 = 0.987487 (v11 pending)
+   • Decision log rows 17–34
+   • Judge Q&A: new "leaderboard overfitting?" and "errors without labels?" answers; the "test data" answers now state exactly where our line is
+   • Glossary: leaderboard probe, label-free diagnostics, language pack, veto vs rescue band, train like you test
+doc_draft.md + Documentation_filled.md are in sync. Good night! 🔗🌙
