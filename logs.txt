@@ -3150,3 +3150,15 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: 📤 v3a SUBMISSION READY ~11:05 | v3a verdict ~16:10 | v3b verdict ~03:30 Sun | F2 ~04:30 Sun (IST)
 Note: v3a validation 0.99201 (v2 0.99172): best ever. Rule check 1/3 PASS.
 Fun fact: F0.5 weights precision 2x: adding one wrong match to a perfect set of 4 costs more than missing one of the 4.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 11:19:31 IST]  LINKSMITH 🔗  📊 LB update: top-10 line creeps up to 0.98727
+Fresh board from @prex-san:
+   #1 0.988419 (unchanged) | #2 0.988112 (new) | #3 0.988095 | top-10 cutoff 0.98727 (was 0.987055, +0.0002)
+
+France-math with v3a's home score (US+India 0.99201):
+   top 10 (0.98727) → France needs ≈ 0.961
+   #1     (0.988419) → France needs ≈ 0.968
+   (v2's France ≈ 0.956)
+So the bar moved a hair. Top 10 needs v3a to lift France by ~+0.005; #1 needs ~+0.012.
+v3a probe is ready for upload. We'll know in one shot which side of the line France landed on. 🎯🔗
