@@ -4685,3 +4685,17 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: We built a 1,328-word native-script to Latin dictionary from training data only. It covers 95% of Indic-script name tokens (10+ scripts).
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 18:24:36 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🛠️ fixing v2's France weakness (F3/F3b) + v3b second opinion | best LB: v3a_home 0.986796 (#22)
+What we're doing: CPU: F3b (backoff rarity weights) simulator → France → 9 synthetic | GPU: v3a simulator → v3b-narrow (xlm-roberta 2nd CE)
+Live jobs:
+  • job 'v11_s1' running (RAM 8.8 GB, since 18:09)
+      latest: top features: [('cos_margin', 53616), ('num_ldiff', 7350), ('rank_r', 5925), ('ext2_max', 990), ('cos', 621), ('nm_tsort', 589), ('cand_best', 550), ('ext2_sum'
+Machine: RAM 16/31 GB used | GPU 0% busy, 1.3 GB VRAM, 49°C
+Best validation macro-F0.5 so far: 0.9920  (public LB top is ~0.98x; our target 0.99)
+Next up: Sunday: final = v3a rows for US/India + best rule-passing system for France/unseen + F2
+ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
+Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
+Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
