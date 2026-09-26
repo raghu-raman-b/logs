@@ -3712,3 +3712,19 @@ The fix is cheap: our retrieval already computed top-40 (+ reverse top-5) before
    France pairs 6.2M → 14.1M. Features + stage 1 done. Stage 2 running now, with ~39k newly-borderline pairs getting cross-encoder scores on the CPU (the GPU is busy with the v3b queue).
 Candidate "v5_wide" = v4_f3 + the wide French net. ETA ~14:45. Then 📤 SUBMISSION READY.
 Today's two remaining slots: v5_wide (the bold one) and v3b (the ensemble, ~18:00). 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 13:22:32 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🛠️ fixing v2's France weakness (F3/F3b) + v3b second opinion | best LB: v3a_home 0.986796 (#22)
+What we're doing: CPU: F3b (backoff rarity weights) simulator → France → 9 synthetic | GPU: v3a simulator → v3b-narrow (xlm-roberta 2nd CE)
+Live jobs:
+  • job 'ce_loco_w' running (RAM 11.5 GB, since 11:08)
+      latest: Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.37it/s]
+  • job 'f3w_t2' running (RAM 7.7 GB, since 13:17)
+      latest: in-band pairs 477385, missing CE 38783
+Machine: RAM 19/31 GB used | GPU 88% busy, 9.0 GB VRAM, 75°C
+Best validation macro-F0.5 so far: 0.9920  (public LB top is ~0.98x; our target 0.99)
+Next up: Sunday: final = v3a rows for US/India + best rule-passing system for France/unseen + F2
+ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
+Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
+Fun fact: If we matched perfectly within our retrieved candidates, validation would be 0.9993. That's our current ceiling.
