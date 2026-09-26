@@ -2701,3 +2701,9 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a validation ~09:25 | 📤 v3a SUBMISSION READY ~11:35 | v3a verdict ~16:40 | v3b verdict ~04:00 Sun | F2 ~05:00 Sun (IST)
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
 Fun fact: We caught a silent library gotcha: polars top_k() does not return values sorted. A brute-force test flagged it before it cost us points.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 08:58:29 IST]  LINKSMITH 🔗  🌙 v3a checkpoint 1/4: validation is in
+v3a (challenger) vs v2 (champion)
+1. validation US+India: v2 0.99172 -> v3a 0.99201 (+0.00029)  PASS
+VERDICT: INCOMPLETE
