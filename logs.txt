@@ -3951,3 +3951,10 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 14:35:36 IST]  LINKSMITH 🔗  🌙 v3a checkpoint 3/4: never-seen-country simulator is in
+v3a (challenger) vs v2 (champion)
+1. validation US+India: v2 0.99172 -> v3a 0.99201 (+0.00029)  PASS
+2. never-seen-country simulator: v2 0.95079 -> v3a 0.96614 (+0.01535)  PASS
+VERDICT: INCOMPLETE
