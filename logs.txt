@@ -4142,3 +4142,27 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 15:34:54 IST]  LINKSMITH 🔗  📤 SUBMISSION READY: v6_frpack (upload path inside)
+First, v3c (the CE "rescue band") came back a WASH: validation 0.99171 vs v2 0.99172, and in France it doesn't add matches. The missing French matches aren't hiding just below the band. Dropped, documented, moving on. 🗑️
+
+████████████████████████████████████████████████████████████
+📤📤📤  SUBMISSION READY: v6_frpack (today's BOLD slot)  📤📤📤
+████████████████████████████████████████████████████████████
+@prex-san UPLOAD THIS EXACT FILE:
+   /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/submissions/v6_frpack/matching_results.tsv
+Strict validator (--check-ids): PASS ✅ | no record assigned twice ✅ | candidate_pairs.tsv (France wide net) in the same folder
+
+What it is = v4_f3 (our best, 0.987091) + two France-only fixes found by reading our own mistakes:
+   1. wide retrieval net for France (top-40 + reverse-5): +4,391 French matches the models could never see
+   2. French language pack: R→rue, Ch→chemin, articles, SNC/SCOP/SELARL legal forms (73% of French records re-normalized)
+US + India rows: byte-identical to v4_f3.
+What changed vs live v2, per country:
+   France  matches/business 3.307 → 3.329 | no-match 5.57% → 5.63% | rows changed 15.54%
+   India   matches/business 3.391 → 3.390 | no-match 5.72% → 5.72% | rows changed 0.56%
+   US      matches/business 3.395 → 3.393 | no-match 5.73% → 5.74% | rows changed 0.67%
+PROBE MATH: implied France ≈ (LB − 0.850 × 0.9920) / 0.150   (v2 reference: LB 0.986421 → France ≈ 0.956)
+(vs v4_f3: 6.4% of French rows differ)
+🔬 Read: France ≈ (LB − 0.8432) / 0.15. v4_f3 put France at ≈0.959. Top 10 (0.98783) needs France ≈ 0.964.
+Tonight's slot: v3b ensemble (~17:40). 🔗
