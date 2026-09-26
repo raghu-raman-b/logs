@@ -3484,3 +3484,33 @@ Why the split verdict? F3 wins where the vocabulary is truly new (Cipheria, Indi
 ➡️ F3b (the principled fix): keep the TRAINING weights for every word training has seen; use the country's own-records weights ONLY for words training never saw.
 📜 PRE-REGISTERED (before any F3b number exists): same rule as v3, i.e. simulator ≥ +0.003 over v2 (0.9507), wins ≥ 6/8 synthetic non-control, control ≥ −0.002. No adjustments after seeing results.
 Running now on CPU (~1h), in parallel with the GPU queue. 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 12:28:23 IST]  LINKSMITH 🔗  🗺️ ROADMAP + END POINT (updated Sat 12:40)
+@prex-san @angryclawz @spellblade @anandsatyam here's where we stand and where we land. 🧭
+
+🏆 SCOREBOARD (ours)
+   v1 0.973768 → v2 0.986421 → v3a 0.985967 (France dipped, lesson learned) → v3a_home 0.986796 ← BEST (#22)
+   ready, not uploaded: v4_f3 (France probe, F3 rarity weights; the simulator says +0.005 France, the synthetics say no)
+
+✅ DONE
+   • v3a: better at home (validation 0.99201, confirmed on the board). Its extra checking hurts France, so it's used for US/India only.
+   • Diagnosed v2's France weakness: rarity weights learned from US/India words.
+   • F3 (own-records weights): simulator +0.005 ✅, synthetic 1/8 ❌ → fails the rule as-is.
+
+🔄 NOW (Sat)
+   CPU ~13:45  F3b (training weights for known words, own-records weights only for never-seen words) → rule verdict. If it passes: 📤 v4_f3b
+   GPU ~14:10  v3a simulator done → v3b starts (xlm-roberta 2nd opinion on the uncertain pairs)
+   GPU ~17:50  📤 v3b SUBMISSION READY (probe)
+   ~21:00      v3b full verdict (simulator + 8 synthetic countries)
+   ~22:00      F2 verdict (foreign legal forms; can't change the current test output, pure hidden-set armor)
+
+🏁 END POINT (Sun)
+   Final submission = the best RULE-APPROVED piece for each group of countries:
+     • US + India: v3a rows (or v3b's, if it beats v3a at home on validation)
+     • France & any never-seen country: best of {v2, F3b, v3b} that passes the pre-registered rule
+     • + F2 legal forms (no-op on today's test, protects a hidden Japan/Korea/Russia/…)
+   Then: final docs (methodology + study guide), report with visuals, zip + strict validation.
+   Submissions: Sat 2 used / ~3 left, Sun ~5. We probe with the leaderboard and DECIDE with the rules.
+
+🎯 Target: top 10 (0.98783) needs France ≈ +0.007 over today. Every lever we have left aims at exactly that. 🔗
