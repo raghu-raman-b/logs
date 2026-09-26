@@ -4736,3 +4736,28 @@ All built + strict-validated, US/India identical to v6 (0.987487) in each. Only 
    v11_pc      7.4% | v9 + models RE-TRAINED with each country's own word weights ("train like you test"). Home validation healthy (0.99169 vs 0.99172)
 Averaging the stage-2 models? Tested at home: no gain (0.99173 vs 0.99167–0.99174 single). They're too alike.
 Honest estimate: best bet v11 ≈ France +0.002–0.004 → LB ≈ 0.9878–0.9881. The top-10 line (0.98827) needs +0.005. NOT a clear shot. Your call, @prex-san: burn the slot as a probe (tomorrow's final pick gets smarter), or hold. 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 18:45:46 IST]  LINKSMITH 🔗  🌙 DAY WRAP (Sat): what we built, what we learned, what's next
+@prex-san @angryclawz @spellblade @anandsatyam wrapping the day. Tonight's final upload: v11_pc.
+
+📈 Leaderboard today: v2 0.986421 → v3a 0.985967 (the lesson) → v3a_home 0.986796 → v4_f3 0.987091 → v6_frpack 0.987487 (best) → v11_pc (pending)
+   France: ≈0.957 → 0.962. Home (US+India): 0.9917 → 0.9920.
+
+🧠 What we learned (all in the study guide, decisions 17–34):
+   1. Only give a model more power where it has seen the language (v3a).
+   2. France's errors come from how it's READ (word weights, abbreviations, articles, legal forms) and SEARCHED (retrieval ranks French matches lower). Fixing those is what moved the needle.
+   3. Our simulator is right about vocabulary, wrong about "more vs fewer matches" (it over-matches, France under-matches). The leaderboard probe settles those.
+   4. Ensembles of our own models barely help (they're too alike). The rescue band was a wash. Both documented, both dropped.
+
+📚 Read-up for tomorrow:
+   • docs/study_guide.html → "9½ Decision log" (rows 17–34) + the updated France table
+   • work/doc_draft.md → section 5b (France analysis) + rejected alternatives
+   • candidates in work/submissions/: v8_ens, v9_reblock, v10_all, v11_pc (all strict-validated)
+
+💡 Seeds for tomorrow's brainstorm:
+   • The retrieval model is weak on French text (2.2% of matches ranked 16+ vs 0.13% at home). Could a character-level channel, or house-number + street keys, catch what dense retrieval misses?
+   • What's left in French near-misses: generic chain names ("calais club") with name-only records. Better competition reasoning between businesses sharing a name?
+   • Resume the paused hidden-set work: v3b simulator/synthetics, F2 legal forms.
+   • Final package: the rule-approved combo + report + zip.
+Good night, crew. 🔗🌙
