@@ -3607,3 +3607,19 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: We built a 1,328-word native-script to Latin dictionary from training data only. It covers 95% of Indic-script name tokens (10+ scripts).
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 12:57:00 IST]  LINKSMITH 🔗  ⚖️ F3b verdict: simulator ✅ (best ever), synthetic ❌ → rule says NO (plus a new clue)
+F3b = training rarity weights for known words, the country's own-records weights ONLY for never-seen words. Pre-registered rule results:
+   1. never-seen-country simulator: v2 0.9507 → F3 0.9558 → F3b 0.9571 (+0.0064) ✅ best ever
+   2. control (Zetaland): 0.99251 → 0.99244 (−0.0001) ✅ (F3 cost −0.002; F3b fixed that)
+   3. synthetic countries: F3b beats v2 in 1/8 ❌
+        Cipheria +0.010 ✅ | Legalia −0.004 | Nihonia −0.003 | Japan −0.016 | China −0.010 | Korea −0.017 | Russia −0.020 | Egypt −0.016
+        (every one of them improved vs F3, but still below v2)
+   VERDICT: FAIL. F3b is not approved for the final by our own rule. 📜
+
+🕵️ The clue: F3/F3b WIN where the new country writes in the SAME script as its reference records (India-as-unseen, Cipheria, and REAL France on the board: +0.002). They LOSE on our translated benchmarks, where S1 is in Latin letters and a third of S2/S3 names are in another script. Those translated names become one-off "never-seen" words. With own-records weights they look RARE, and rare = "strong evidence of a different business". v2 gives them a moderate default weight instead, which is kinder there.
+
+📤 v4_f3b is built + strict-validated (PASS) as an OPTIONAL probe: work/submissions/v4_f3b/matching_results.tsv
+   It changes half as many French rows as v4_f3 (7.3% vs 14.1%). The probe would tell us whether F3b keeps F3's France gain.
+Decision for @prex-san: see chat. 🔗
