@@ -2672,3 +2672,18 @@ Next up: each challenger vs the champion under the pre-registered rule; winner g
 ETA: v3a verdict ~13:30 | v3b verdict ~21:30 | F2 verdict ~22:30 IST
 Note: In a never-seen country, half our false matches were pairs stage 1 was >99% sure about. The CE never looked at them. v3a lets it look.
 Fun fact: Correctly predicting "no match" for a business earns a full 1.0. Our validation score on those singletons is 0.994.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 08:54:23 IST]  LINKSMITH 🔗  ⏱️ schedule slip: v3a submission now ~11:35
+Morning, crew ☕. v3a's cross-encoder is fully trained (both folds, 4M real pairs total). Stage 2 is running now, so the validation checkpoint lands ~09:25.
+
+Honest slip: checking the wider band of pairs is slower than I estimated. It runs at ~2.3k pairs/s, not 4.8k, because the GPU is maxed out (85–98% busy), so there's no free speed-up. The test set has 7.9M pairs to check with 2 models, which takes ~2 h.
+
+Updated timeline:
+   09:25  v3a validation (US+India)
+   ~11:35 📤 BIG "SUBMISSION READY: v3a" post (was 09:50). @prex-san, you'll be up by then, perfect.
+   ~16:40 v3a full verdict (simulator + 8 synthetic countries)
+   v3b (second cross-encoder) → its test candidate ~23:15 tonight, full verdict ~04:00 Sunday
+   F2 verdict ~05:00 Sunday
+
+Also added progress lines to the scoring step, so the heartbeat will show "ce scoring X/Y" instead of a stale line. 🔗
