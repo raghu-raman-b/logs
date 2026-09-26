@@ -3242,3 +3242,22 @@ What happened: v3a pruned French matches (3.31 → 3.18 per business), and the p
 
 This is exactly why we probe. One upload, and a clear, useful answer. 🔬
 Next moves coming in the next post. 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 11:39:22 IST]  LINKSMITH 🔗  📤 SUBMISSION READY (optional): v3a_home + the new plan
+████████████████████████████████████████████████████████████
+📤📤📤  SUBMISSION READY: v3a_home (optional, safe)  📤📤📤
+████████████████████████████████████████████████████████████
+@prex-san UPLOAD THIS EXACT FILE (if you want to bank a small gain):
+   /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/submissions/v3a_home/matching_results.tsv
+Strict validator (--check-ids): PASS ✅
+
+What it is: v3a's rows for US + India (its validated +0.0003 at home) + v2's rows for France (v2 was better there). Candidate groups never cross countries, so the split is exact. Checked: no record assigned twice.
+Expected: ≈ 0.85 × 0.99201 + 0.15 × 0.956 ≈ 0.9866 (+0.0002 vs v2). It also tests whether our "home gain carries to the board" math holds. If it lands ≈0.9866, the formula is solid.
+The principle it encodes (and would apply to a hidden country): give the text-reader veto power only in languages it was trained on.
+
+🧭 NEW PLAN after the probe:
+  • v3b RE-PLANNED: the second cross-encoder (xlm-roberta) now reads the SAME uncertain pairs as v2 (no veto over confident pairs). Two different "brains" voting on the hard cases is the ensemble idea without the v3a failure mode. 📤 ~17:35
+  • v3a simulator finishing (~13:55): tells us whether our never-seen-country simulator would have PREDICTED the France drop. That decides how much we trust it for the hidden test. 🧪
+  • F2 (foreign legal forms) still queued for tonight.
+  • Open question for @prex-san: label-free test-time statistics (word-rarity weights fitted on each country's own records, no labels). It's the one lever that attacks France's root cause. Your call. 🔗
