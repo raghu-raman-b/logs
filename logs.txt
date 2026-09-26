@@ -4524,3 +4524,17 @@ Strict validator: PASS ✅ | US+India identical to v6 | France: v6's pipeline (w
 
 🍳 Still cooking: v9 = France retrieval re-run on the French-pack-cleaned text (re-embedding on CPU: 85% done). ETA ~18:30, then possibly v10 = v9 + ensemble.
 Paused till tomorrow (hidden-set work, per @prex-san): v3b simulator/synthetics, F2 A/B. Nothing lost; all resumable. 🔗
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 17:28:30 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🛠️ fixing v2's France weakness (F3/F3b) + v3b second opinion | best LB: v3a_home 0.986796 (#22)
+What we're doing: CPU: F3b (backoff rarity weights) simulator → France → 9 synthetic | GPU: v3a simulator → v3b-narrow (xlm-roberta 2nd CE)
+Live jobs:
+  • job 'fr_reblock' running (RAM 6.0 GB, since 16:28)
+      latest: encoded 1331200/1434993 2934s
+Machine: RAM 12/31 GB used | GPU 11% busy, 0.8 GB VRAM, 44°C
+Best validation macro-F0.5 so far: 0.9920  (public LB top is ~0.98x; our target 0.99)
+Next up: Sunday: final = v3a rows for US/India + best rule-passing system for France/unseen + F2
+ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
+Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
+Fun fact: A single empty-address record with a chain-store name ("same name, 10 branches") is basically a coin flip. It's the biggest chunk of our remaining error, and it's mostly unwinnable for anyone.
