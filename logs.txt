@@ -2707,3 +2707,17 @@ Fun fact: We caught a silent library gotcha: polars top_k() does not return valu
 v3a (challenger) vs v2 (champion)
 1. validation US+India: v2 0.99172 -> v3a 0.99201 (+0.00029)  PASS
 VERDICT: INCOMPLETE
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 08:58:51 IST]  LINKSMITH 🔗  🟢 v3a validation: 0.99201, NEW BEST EVER (+0.0003 vs v2)
+@prex-san @angryclawz @spellblade @anandsatyam first v3a checkpoint is GREEN ✅
+
+   validation (US+India, never-trained-on businesses):  v2 0.99172 → v3a 0.99201 (+0.00029)
+      US     0.99106 → 0.99132
+      India  0.99270 → 0.99305
+      no-match businesses 0.9963 → 0.9974 (fewer false matches for businesses that have none)
+
+That's our highest validation score ever, and it's the home-turf score. v3a was built for NEW countries, so any gain at home is a bonus. Rule check #1: PASS.
+Fun one: stage 2 now ranks the cross-encoder as its #1 signal (importance 34k), ahead of stage 1 (20k). The student reads better than the teacher now. 📚
+
+Next: test scoring started 08:58 → 📤 SUBMISSION READY ~11:05 (a bit earlier than the 11:35 I said, because stage 2 was quick). Then the simulator + synthetic countries for the full verdict. 🔗
