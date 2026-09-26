@@ -3852,3 +3852,16 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Our retrieval step did ~24 trillion 384-dim dot products on the train set alone, exact (no approximation), on one RTX 5070.
+
+────────────────────────────────────────────────────────────
+[Sat 26 Sep 2026 14:01:19 IST]  LINKSMITH 🔗  🔨 going ham on France: 3 fixes stacked, 2 already built
+@prex-san @angryclawz @spellblade @anandsatyam afternoon report. Every fix below came from reading OUR OWN predictions (no labels), France vs home.
+
+🔎 Clue 1: the France retrieval net was too narrow → FIX v5_wide (built ✅): France keeps top-40 + reverse-5 candidates (was 20/2). +4,391 French matches that the models could never see before.
+🔎 Clue 2: French near-misses carry HUGE "unmatched rare word" penalties (address: 4.99 vs 0.8 at home). Looking at them: "56 R de la Marzelle" vs "70 rue de la marzelle", "Ch Foismey" vs "chem foissey", "…club SNC", "maison DE sante" vs "maison sante DE". Our normalizer knew "St = Street" but not "R = Rue".
+   → FIX v6_frpack (built ✅, strict PASS): a French language pack (rue/chemin/avenue… abbreviations, French articles, SNC/SCOP/SELARL… legal forms). ONLY for France, so US/India are byte-identical. Re-normalized 73% of French records.
+🔎 Clue 3: France looks UNDER-matched. Same data generator as training (truth ≈ 3.46 matches/business); we predict 3.33 in France vs 3.39 at home. And every France probe agrees: pruning (v3a) hurt, adding (F3) helped.
+   → FIX v3c "rescue band" (running): today the cross-encoder only re-reads pairs with stage-1 p ≥ 0.01. v3c lets it re-read [0.001, 0.01) too, so it can RESCUE true matches stage 1 undersold (at home 1,540 misses live there). This is the mirror image of v3a: rescue power, NOT veto power. Same v2 cross-encoders, stage 2 retrained, validated at home before anything ships.
+
+⏱️ Timeline: v3c validation ~15:20 → v7 (= v3c + wide + French pack for France) ~15:40 → v3b ensemble ~17:40 (trimmed to 1M pairs/fold so both fit today).
+🎯 Today's 2 slots: the best "bold" candidate when @prex-san is back (~16:00) + the ensemble tonight. 🔗
