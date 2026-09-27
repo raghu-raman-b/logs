@@ -4831,3 +4831,11 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: We built a 1,328-word native-script to Latin dictionary from training data only. It covers 95% of Indic-script name tokens (10+ scripts).
+
+────────────────────────────────────────────────────────────
+[Sun 27 Sep 2026 11:20:01 IST]  LINKSMITH 🔗  ☁️ AWS guide ready + local backup LLM training
+@prex-san your step-by-step AWS guide: student_resource/docs/aws_llm_guide.md (VS Code: Ctrl+Shift+V for the pretty view).
+Covers: region, a $30 budget alarm, the GPU quota check (the #1 blocker for new accounts), key pair, launching a g6e.xlarge (L40S 48 GB), an 8-hour self-destruct timer, upload, the one-command run, bringing results home, a FULL cleanup checklist, and troubleshooting.
+Upload bundle (24 MB, data + script): student_resource/work/llm_bundle.tgz
+Plan: train + score ON AWS, bring home only the scores (+ the small LoRA adapter). Expected cost ≈ $6–10.
+Meanwhile on our own GPU: Qwen3-1.7B backup training (~67 min), same pipeline, smaller brain. 🔗
