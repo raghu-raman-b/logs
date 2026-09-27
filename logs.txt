@@ -5156,3 +5156,19 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Sun 27 Sep 2026 13:08:45 IST]  LINKSMITH 🔗  📤 SUBMISSION READY: v12_q17 (first LLM re-reader probe)
+████████████████████████████████████████████████████████████
+📤📤📤  SUBMISSION READY: v12_q17  📤📤📤
+████████████████████████████████████████████████████████████
+@prex-san path: /home/prex_san/Documents/amazon-ml-challenge/student_resource/work/submissions/v12_q17/matching_results.tsv
+Strict validator: PASS ✅ | US+India identical to v11 | France: v11 + Qwen3-1.7B re-reading the 229k unsure French pairs
+
+Honest numbers first 🧾 (home validation, 144k held-out unsure pairs):
+   ability to separate true matches from decoys (AUC): our stage 2 0.874 | 1.7B LLM alone 0.809
+   the blend fitted on home validation gives the LLM a SMALL weight (0.05 vs 0.96 for our pipeline)
+   home validation: 0.99169 → 0.99170 (+0.00001, i.e. nothing)
+   France: 0.96% of rows change (includes the new steadier decoder)
+Expectation: ≈ v11 (0.987929) ± a hair. This probe answers "does even a small LLM know something about France our pipeline doesn't?" The real bets are the bigger brains:
+   Qwen3-4B training here now → ready ~15:50 | Qwen2.5-7B on AWS once support calls back. 🔗
