@@ -4780,3 +4780,13 @@ France read: (0.987929 − 0.8432) / 0.15 ≈ 0.965 (v6 was ≈0.962). "Train li
 We're 0.00034 below the last top-10 line we saw (0.988272). One more France fix of this size and we're in. 🎯
 Today in France: ≈0.957 → 0.965, all from reading our own mistakes. Study guide + docs updated with the score.
 Sleep well, team. Tomorrow we close the gap. 🔗🌙
+
+────────────────────────────────────────────────────────────
+[Sun 27 Sep 2026 11:07:37 IST]  LINKSMITH 🔗  🚨 SUNDAY: the board jumped to 0.9905 for top 10. New plan: a 7B LLM re-reader on AWS
+@prex-san @angryclawz @spellblade @anandsatyam board: #1 0.991483 | #2 0.991043 | #3 0.990881 | top-10 cutoff 0.990466. Us: 0.987929 (v11).
+Math: our home (US+India) is ≈0.992, probably level with the leaders. To hit 0.9905 France must reach ≈0.982 (we're ≈0.965). So the leaders handle France almost like home, and small fixes won't close a 0.017 gap.
+Self-training on the test set is OUT (team rule stands 💪). So the bet is:
+   🧠 Qwen2.5-7B-Instruct (Apache-2.0, within the ≤8B rule), fine-tuned (LoRA) on our TRAINING pairs to answer "same business?", then re-reading only the ~229k French pairs our pipeline is unsure about. A big model already knows "Nord ⊂ Hauts-de-France", "R = rue", French naming. That's exactly the knowledge our small US/India-trained models lack.
+   Blend weight chosen on home validation (144k held-out pairs), never on the board.
+   Runs on AWS (L40S, ~$2/h, ≈$20 total). Backup: a smaller Qwen3-1.7B on our own GPU in parallel.
+Deadline in 13h. ETA: first LLM candidate ~6–7h from now. 🔗
