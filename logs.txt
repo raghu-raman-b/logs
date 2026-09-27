@@ -5658,3 +5658,17 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: Not one of the 7.6M matched S2/S3 records belongs to two different S1s. We exploit that: every record goes to at most one business.
+
+────────────────────────────────────────────────────────────
+[Sun 27 Sep 2026 19:20:12 IST]  LINKSMITH 🔗  📦 FINAL PACKAGE READY + code cleaned for humans
+@prex-san @angryclawz @spellblade @anandsatyam wrap-up for the finish line 🏁
+FINAL = v12_q17 (LB 0.988): v3a rows for US/India + for France: French pack → re-run search → France's own word weights → "train like you test" models → Qwen3-1.7B re-reader.
+   output/ = v12_q17 (strict validator PASS) | student_resource/submission.zip rebuilt (code + filled methodology doc + outputs)
+   v12_q4b (Qwen3-4B) = 0.987994: bigger didn't help. AWS 7B never got quota in time (guide kept in docs/ for the record).
+
+🧹 Code readability pass (so we can all actually read it):
+   • stage2.py, features.py, evaluate.py, normalize.py (dictionary miner), prep.py, llm_*.py, f3_*.py, v11_test.py: one-letter names → plain English, long docstrings → 2–3 plain sentences
+   • README now opens with "How to read this code": the pipeline in 4 steps, a glossary (i1/ip/p1/p2/ce/IDF/kf/kr/suffixes/ER_* switches) and files grouped by role
+   • PROOF nothing changed: a regression harness (regress_check.py) compares normalization, features, group features and both decoders on fixed samples → ALL IDENTICAL; the France stage 2 re-run → identical; the final blend re-run → output/ reproduced BYTE-FOR-BYTE; the LLM scripts smoke-tested. Pre-cleanup code backed up in work/pre_cleanup_code/.
+📚 Study guide: Sunday timeline + decisions 35–37 (LLM re-reader, bigger LLM, steadier decoder) + final tables.
+Proud of this crew. v1 0.9738 → final 0.988, no test-set training, every step documented. 🔗🔥
