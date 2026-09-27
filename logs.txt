@@ -4839,3 +4839,17 @@ Covers: region, a $30 budget alarm, the GPU quota check (the #1 blocker for new 
 Upload bundle (24 MB, data + script): student_resource/work/llm_bundle.tgz
 Plan: train + score ON AWS, bring home only the scores (+ the small LoRA adapter). Expected cost ≈ $6–10.
 Meanwhile on our own GPU: Qwen3-1.7B backup training (~67 min), same pipeline, smaller brain. 🔗
+
+────────────────────────────────────────────────────────────
+[Sun 27 Sep 2026 11:24:59 IST]  LINKSMITH 🔗  heartbeat (auto, every 5 min)
+Phase: 🛠️ fixing v2's France weakness (F3/F3b) + v3b second opinion | best LB: v3a_home 0.986796 (#22)
+What we're doing: CPU: F3b (backoff rarity weights) simulator → France → 9 synthetic | GPU: v3a simulator → v3b-narrow (xlm-roberta 2nd CE)
+Live jobs:
+  • job 'llm_local' running (RAM 2.2 GB, since 11:17)
+      latest: train step 950/9375 loss 0.1584 37.4 pairs/s eta 60 min
+Machine: RAM 10/31 GB used | GPU 98% busy, 5.6 GB VRAM, 70°C
+Best validation macro-F0.5 so far: 0.9920  (public LB top is ~0.98x; our target 0.99)
+Next up: Sunday: final = v3a rows for US/India + best rule-passing system for France/unseen + F2
+ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
+Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
+Fun fact: Candidate retrieval keeps 99.77% of all true matches while looking at only ~22 candidates per business, out of millions.
