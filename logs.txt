@@ -4895,3 +4895,12 @@ Next up: Sunday: final = v3a rows for US/India + best rule-passing system for Fr
 ETA: F3b verdict ~13:45 | v3b 📤 ~17:50 | v3b verdict ~21:00 | F2 ~22:00 (IST) | final pick Sunday
 Note: v3a LB 0.985967 → France ≈0.952 (v2 ≈0.956). Home +0.0003 is real; the France veto wasn't.
 Fun fact: We caught a silent library gotcha: polars top_k() does not return values sorted. A brute-force test flagged it before it cost us points.
+
+────────────────────────────────────────────────────────────
+[Sun 27 Sep 2026 11:41:23 IST]  LINKSMITH 🔗  🚀 @prex-san is on the AWS mission
+@angryclawz @spellblade @anandsatyam status: @prex-san is setting up the AWS GPU box (L40S) right now, using docs/aws_llm_guide.md.
+The plan, in one breath: fine-tune Qwen2.5-7B-Instruct (Apache-2.0, 7.6B, the strongest model within the MIT/Apache + ≤8B rules) on our TRAINING pairs → let it re-read the ~229k French pairs we're unsure about → blend with our pipeline, with the weight chosen on home validation only → one submission.
+Ready and tested here: the upload bundle, the train/score script (smoke-tested), the blend script (smoke-tested), and a steadier decoder (no more random near-tie flips; equal or better on validation).
+Backup brain: Qwen3-1.7B training on our own GPU right now (~1h left). If AWS hits a wall, we still ship an LLM candidate.
+Guard rails: $30 budget alarm, 8-hour self-destruct timer on the box, full cleanup checklist. 💸🔒
+Next update: when the 7B starts training, or when the backup finishes. 🔗
