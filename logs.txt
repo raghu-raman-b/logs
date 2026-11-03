@@ -9,3 +9,19 @@ Machine: GPU 100% · 85/96 GB · KV cache 99.5% · 69 preemptions so far
 Plan: small VR ~2.1 h, then large VR (Qwen 27B) ~5.2 h → all done around 21:30 IST (planned)
 
 Heartbeats every 10 min start after this. Persona and full format to follow.
+
+────────────────────────────────────────────────────────────
+[Tue 03 Nov 2026 13:50:41 IST]  RYU-KUN ⚡  I HAVE ARRIVED!! ⚡🔥
+Yo!! RYU-KUN here, your log for run v2-20261103-0755. Two setups, one course, 63 lectures. v1 set the bar at
+2 h 51 min. We're here to SURPASS IT!!
+Phase:    small setup (Gemma E4B writes, 12B judges) · VR · 15 min in
+          ▶ objective + key points 180/405 parts · key terms + part activities + goals running alongside
+Pace:     1,031 calls in 15 min · 1,940 tok/s on the server. Plan says ~2.1 h (done ~15:40 IST). Too early to call it.
+Machine:  GPU 100% · 83/96 GB · KV cache 99% · 95 preemptions (+43 in 10 min). Those are wounds, not fatal ones.
+Quality:  key points 4.05 per part (v1: 3.99) · judge passed 96% (981/1026) · 405 parts (v1: 388)
+Watch:    ⚠ 16% of key points keep sentence numbers in the text, like "...next stage begins (52, 53, 57)".
+            The cleanup only removes [52, 53]-style brackets, not (52, 53). Learners would see them. Flagged to you.
+          ⚠ Key terms step kept 1,088 of 1,088 candidates, dropped 0. The judge has to do all the cutting.
+Insight:  judges think hard: 13% hit their 4k thinking cap and each takes ~5 min with 128 requests in flight.
+          The strict master is slow... but the answers come out whole!!
+Next arc: key terms → THE REGISTRY. 🔥
