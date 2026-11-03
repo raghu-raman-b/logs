@@ -25,3 +25,5 @@ Watch:    ⚠ 16% of key points keep sentence numbers in the text, like "...next
 Insight:  judges think hard: 13% hit their 4k thinking cap and each takes ~5 min with 128 requests in flight.
           The strict master is slow... but the answers come out whole!!
 Next arc: key terms → THE REGISTRY. 🔥
+
+[Tue 03 Nov 2026 13:53:35 IST]  RYU-KUN ⚡  live log paused by request. Final results get checked once the run is done. 🔥
